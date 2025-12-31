@@ -635,3 +635,18 @@ class: text-center
 [Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
 
 <PoweredBySlidev mt-10 />
+
+---
+layout: two-cols
+monacoTypesAdditionalPackages:
+  - zod
+---
+
+<template v-slot:default>
+<PasswordForm />
+</template>
+
+<template v-slot:right>
+<<< ./components/forms/password-schema.ts {monaco-write} {height: '100%'}
+</template>
+
