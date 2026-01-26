@@ -1,3 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+:root {
+  /* Palette Le Magicien Zod */
+  --oz-gold: #D4A017;
+  --oz-emerald: #50C878;
+  --oz-ruby: #C21807;
+  --oz-zod-blue: #3068B7;
+  --oz-kansas-sky: #E8F4FD;
+  --oz-cream: #FDFBF7;
+  --oz-cloud: #F5F5F5;
+  --oz-text: #2D3748;
+  --oz-text-light: #64748B;
+  
+  /* Slidev overrides */
+  --slidev-theme-primary: var(--oz-zod-blue);
+  --slidev-theme-background: var(--oz-kansas-sky);
+}
+
+/* Fond global */
+.slidev-layout {
+  background-color: var(--oz-kansas-sky);
+}
+
+/* Titres */
+h1 {
+  color: var(--oz-text);
+  font-weight: 700;
+}
+
+h2, h3 {
+  color: var(--oz-text);
+  font-weight: 700;
+}
+
+/* Ponctuation colorée */
+.punct {
+  color: var(--oz-zod-blue);
+}
+
+/* Liens */
+a {
+  color: var(--oz-zod-blue);
+}
+
+a:hover {
+  color: var(--oz-gold);
+}
+
+/* Code blocks */
+.slidev-code {
+  background-color: var(--oz-cloud) !important;
+}
+
+/* Listes */
+li::marker {
+  color: var(--oz-gold);
+}
+
+/* Strong/Bold */
+strong {
+  color: var(--oz-text);
+  font-weight: 700;
+}
+
+/* Monaco container */
 .slidev-monaco-container {
-    height: 100%;
+  height: 100%;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--oz-kansas-sky);
+  color: var(--oz-text);
+}
+
+td, th {
+  border: 1px solid #e2e8f0;
+  padding: 0.5rem 1rem;
+}
+
+/* v-click animations */
+.slidev-vclick-target {
+  transition: all 0.3s ease;
 }
