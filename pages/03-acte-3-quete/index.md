@@ -8,7 +8,7 @@ La quête
 ---
 layout: center
 class: relative overflow-hidden
-transition: none
+transition: fade-out
 ---
 
 <style>

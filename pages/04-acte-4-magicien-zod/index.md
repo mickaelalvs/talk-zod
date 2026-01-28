@@ -8,6 +8,7 @@ Le Magicien Zod
 ---
 layout: center
 class: relative overflow-hidden
+transition: fade-out
 ---
 
 <style>
