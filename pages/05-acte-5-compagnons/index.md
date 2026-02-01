@@ -58,23 +58,54 @@ Grâce à Zod :
 ---
 
 # Inférence automatique
+Une source de vérité unique !
 
+
+````md magic-move
 ```ts
-type User = z.infer<typeof UserSchema>
+const UserSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    permission: z.array(z.string()),
+})
 ```
+```ts
+const UserSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    permission: z.array(z.string()),
+})
+
+const user: [???] = {...}
+```
+```ts
+const UserSchema = z.object({
+    id: z.number(),
+    name: z.string(),
+    permission: z.array(z.string()),
+})
+
+type User = z.infer<typeof UserSchema>;
+
+const user: User = {...}
+```
+````
+
+<v-click>
+<h2 class="pt-10">
+
+Le schéma deviens la source de vérité ! 🗺️
+
+</h2>
+</v-click>
 
 <v-click>
 
-Une seule source de vérité :
+<br />
+
+Zod nous protège au **Runtime** ET au **BuildTime**
 
 </v-click>
-
-<v-clicks>
-
-- Zod protège au runtime
-- TypeScript comprend au build
-
-</v-clicks>
 
 ---
 
@@ -97,6 +128,6 @@ type Output = z.output<typeof Schema> // number
 
 <v-click>
 
-`z.infer` = `z.output` (le type après transformation)
+*Peut s'avérer très utile dans le cas d'un formulaire !*
 
 </v-click>
