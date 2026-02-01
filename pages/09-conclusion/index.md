@@ -59,6 +59,7 @@ jusqu'au runtime
 - **Zod Playground** : zod.dev/playground
 - **Matt Pocock** : Total TypeScript (YouTube)
 - **Documentation** : zod.dev
+- **Standard Schema** : https://standardschema.dev/
 
 </v-clicks>
 
