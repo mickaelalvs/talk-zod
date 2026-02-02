@@ -18,31 +18,32 @@ transition: fade-out
   display: flex;
   align-items: center;
   justify-content: center;
+  top: -1Opx;
 }
 
 .path-wrapper-4 {
+  animation: walkBob4 1.2s ease-in-out infinite;
 }
 
 .path-img-4 {
-  animation: pathMove4 30s linear forwards, walkBob4 1.2s ease-in-out infinite;
-  transform: scale(1.8) translate(-30px, 50px);
+  animation: pathMove4 30s linear forwards;
 }
 
 @keyframes pathMove4 {
   0% {
-    transform: scale(1.8) translate(-30px, 50px);
+    transform: scale(1.0) translate(-30px, 50px);
   }
   100% {
-    transform: scale(2.2) translate(-100px, 100px);
+    transform: scale(2.2) translate(-50px, 100px);
   }
 }
 
 @keyframes walkBob4 {
   0%, 100% {
-    margin-top: 0;
+    transform: translateY(0);
   }
   50% {
-    margin-top: 6px;
+    transform: translateY(6px);
   }
 }
 

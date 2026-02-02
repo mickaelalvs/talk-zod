@@ -146,3 +146,115 @@ Conséquences :
 **Il faut une autre approche.**
 
 </v-click>
+
+---
+
+# Le HTML valide la forme, pas le sens
+
+<div class="mt-6">
+
+<!-- Comparaisons entre champs -->
+<div v-click class="mb-6">
+  <div class="text-sm font-semibold text-[#718096] mb-2">🔄 Comparaisons entre champs</div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="flex items-center gap-3 bg-purple-50 px-4 py-2 rounded">
+      <span class="text-2xl">🔐</span>
+      <code class="text-sm text-purple-600">password === confirmPassword</code>
+    </div>
+    <div class="flex items-center gap-3 bg-purple-50 px-4 py-2 rounded">
+      <span class="text-2xl">📅</span>
+      <code class="text-sm text-purple-600">dateFin > dateDebut</code>
+    </div>
+  </div>
+</div>
+
+<!-- Validations conditionnelles -->
+<div v-click class="mb-6">
+  <div class="text-sm font-semibold text-[#718096] mb-2">⚡ Validations conditionnelles</div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded">
+      <span class="text-2xl">🏢</span>
+      <span class="text-sm">SIRET si <code class="text-xs">type === "entreprise"</code></span>
+    </div>
+    <div class="flex items-center gap-3 bg-blue-50 px-4 py-2 rounded">
+      <span class="text-2xl">🔗</span>
+      <span class="text-sm">Champ requis <em>si</em> un autre est rempli</span>
+    </div>
+  </div>
+</div>
+
+<!-- Validations de valeurs -->
+<div v-click class="mb-6">
+  <div class="text-sm font-semibold text-[#718096] mb-2">📏 Validations de valeurs</div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="flex items-center gap-3 bg-green-50 px-4 py-2 rounded">
+      <span class="text-2xl">🎂</span>
+      <code class="text-sm text-green-600">âge ≥ 18</code>
+    </div>
+    <div class="flex items-center gap-3 bg-green-50 px-4 py-2 rounded">
+      <span class="text-2xl">📁</span>
+      <code class="text-sm text-green-600">fileSize ≤ 5MB</code>
+    </div>
+    <div class="flex items-center gap-3 bg-green-50 px-4 py-2 rounded">
+      <span class="text-2xl">💰</span>
+      <code class="text-sm text-green-600">total ≤ budget</code>
+    </div>
+    <div class="flex items-center gap-3 bg-green-50 px-4 py-2 rounded">
+      <span class="text-2xl">🔤</span>
+      <span class="text-sm">1 maj + 1 chiffre + 1 spécial</span>
+    </div>
+  </div>
+</div>
+
+<!-- Validations avancées -->
+<div v-click class="mb-6">
+  <div class="text-sm font-semibold text-[#718096] mb-2">🚀 Validations avancées</div>
+  <div class="grid grid-cols-2 gap-4">
+    <div class="flex items-center gap-3 bg-orange-50 px-4 py-2 rounded">
+      <span class="text-2xl">💳</span>
+      <span class="text-sm">Validation IBAN / carte bancaire</span>
+    </div>
+    <div class="flex items-center gap-3 bg-orange-50 px-4 py-2 rounded">
+      <span class="text-2xl">🌐</span>
+      <span class="text-sm">Vérifier si l'email existe (API)</span>
+    </div>
+    <div class="flex items-center gap-3 bg-orange-50 px-4 py-2 rounded">
+      <span class="text-2xl">📊</span>
+      <span class="text-sm">Validation JSON structuré</span>
+    </div>
+    <div class="flex items-center gap-3 bg-orange-50 px-4 py-2 rounded">
+      <span class="text-2xl">⏱️</span>
+      <span class="text-sm">Validation temps réel</span>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div 
+  v-click
+  v-motion
+  :initial="{ opacity: 0, y: 20 }"
+  :enter="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 20 } }"
+  class="mt-10 w-full flex justify-center">
+  <div class="bg-gradient-to-r from-orange-50 to-red-50 border-l-4 border-orange-500 px-8 py-4 rounded-r-lg shadow-md">
+    <div class="text-2xl font-bold text-[#2D3748] mb-1">
+      Le HTML ne connaît pas vos règles métier
+    </div>
+    <div class="text-sm text-[#4A5568] italic">
+      Il faut du code pour exprimer votre logique
+    </div>
+  </div>
+</div>
+
+<div 
+  v-click
+  class="mt-8 text-center">
+  <div class="inline-flex items-center gap-3 bg-yellow-50 border border-yellow-300 px-6 py-3 rounded-lg">
+    <span class="text-2xl">⚠️</span>
+    <span class="text-base text-[#4A5568]">
+      JavaScript obligatoire pour la logique... mais pas suffisant pour la sécurité
+    </span>
+  </div>
+</div>
+
