@@ -1,109 +1,31 @@
 ---
-layout: act
-actNumber: I
+src: ./slides/01-act-title.md
 ---
 
-Le royaume enchanté de TypeScript
-
 ---
-layout: story
+src: ./slides/02-storytelling.md
 ---
 
-Un royaume où régnait l'ordre et la sérénité.
-
-<v-click>
-
-Les développeurs y vivaient heureux, protégés par une **magie ancienne**.
-
-</v-click>
-
-<v-click>
-
-Cette magie s'appelait **TypeScript**.
-
-</v-click>
-
-<v-click>
-
-Elle veillait sur eux, les avertissant du danger avant même qu'il n'arrive.
-
-</v-click>
-
-<v-click>
-
-**Tout semblait parfait...**
-
-</v-click>
-
+---
+src: ./slides/03-citation.md
 ---
 
-# Le monde TypeScript
-
-TypeScript nous offre :
-
-<v-clicks>
-
-- l'autocomplétion
-- la détection d'erreurs au build
-- des refactorings sûrs
-- une excellente DX
-
-</v-clicks>
-
-<v-click>
-
-C'est un royaume stable, ordonné et rassurant.
-
-</v-click>
-
+---
+src: ./slides/04-pourquoi.md
 ---
 
-# Comment fonctionne la magie TypeScript
-
-TypeScript repose sur une **analyse statique**.
-
-```ts
-type User = {
-  id: string
-  email: string
-}
-```
-
-<v-clicks>
-
-Ce type :
-
-- est connu de l'IDE
-- est vérifié à la compilation
-- n'existe pas au runtime
-
-</v-clicks>
-
+---
+src: ./slides/05-autocompletion.md
 ---
 
-# La disparition des types
+---
+src: ./slides/06-erreurs.md
+---
 
-```ts
-// TypeScript
-type User = { id: string }
-```
+---
+src: ./slides/07-fonctionnalites.md
+---
 
-<v-click>
-
-devient :
-
-```js
-// JavaScript
-{}
-```
-
-</v-click>
-
-<v-click>
-
-Les types sont **effacés**.
-
-TypeScript protège uniquement jusqu'au build.
-
-</v-click>
-
+---
+src: ./slides/08-transition.md
+---

@@ -1,121 +1,54 @@
 ---
-layout: act
-actNumber: II
+src: ./slides/01-act-title.md
+transition: fade-out
 ---
 
-La frontière du build
-
 ---
-layout: story
----
-
-Un jour, une terrible **tornade** s'abattit sur le royaume.
-
-<v-click>
-
-Elle emporta nos héros au-delà des frontières connues...
-
-</v-click>
-
-<v-click>
-
-Dans un monde où les types n'existaient plus.
-
-</v-click>
-
-<v-click>
-
-**Le runtime.**
-
-</v-click>
-
+src: ./slides/02-storytelling-tornado.md
+transition: fade-out
 ---
 
-# La tornade du runtime
-
-Au runtime, on rencontre :
-
-<v-clicks>
-
-- des réponses d'API
-- des formulaires utilisateurs
-- des variables d'environnement
-- des JSON externes
-
-</v-clicks>
-
-<v-click>
-
-Toutes ces données échappent à TypeScript.
-
-</v-click>
-
+---
+src: ./slides/03-tout-a-change.md
+transition: fade-out
 ---
 
-# La frontière invisible
-
-```ts
-async function getUser() {
-  const user: User = await fetch("/api/user")
-    .then(r => r.json())
-  return user
-}
-```
-
-<v-clicks>
-
-Ici :
-
-- TypeScript est satisfait
-- aucune validation n'a lieu
-- le type est une promesse non vérifiée
-
-</v-clicks>
-
+---
+src: ./slides/04-code-change.md
+transition: fade-out
 ---
 
-# Les bugs du monde réel
-
-```ts
-user.email.toLowerCase()
-```
-
-<v-click>
-
-Erreur en production :
-
-```
-Cannot read properties of undefined
-```
-
-</v-click>
-
-<v-click>
-
-Le bug n'est pas une surprise, il est **inévitable** sans validation runtime.
-
-</v-click>
-
+---
+src: ./slides/05-navigateur.md
+transition: fade-out
 ---
 
-# Le vent se lève...
+---
+src: ./slides/06-storytelling-external.md
+transition: fade-out
+---
 
-Les données du runtime sont **imprévisibles**.
+---
+src: ./slides/07-au-runtime.md
+transition: fade-out
+---
 
-<v-click>
+---
+src: ./slides/08-reponse-api.md
+transition: fade-out
+---
 
-Nos héros réalisent qu'ils ont besoin d'aide.
+---
+src: ./slides/09-formulaires.md
+transition: fade-out
+---
 
-</v-click>
+---
+src: ./slides/11-et-aussi.md
+transition: fade-out
+---
 
-<v-click>
-
-On leur parle d'un **magicien**...
-
-</v-click>
-
-<v-click>
-
-Un magicien capable de protéger le runtime.
-
-</v-click>
+---
+src: ./slides/12-constat.md
+transition: fade-out
+---
