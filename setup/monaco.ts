@@ -4,6 +4,7 @@ export default defineMonacoSetup(() => {
     return {
         editorOptions: {
             wordWrap: 'on',
+            lineNumbers: 'on',
         }
     }
 })

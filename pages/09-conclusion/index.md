@@ -3,6 +3,41 @@ layout: center
 class: text-center
 ---
 
+# Quand utiliser Zod ?
+
+<div class="text-left max-w-2xl mx-auto mt-8 space-y-6">
+
+<div v-click class="flex items-start gap-4">
+  <span class="text-2xl">🚫</span>
+  <div>
+    <div class="font-bold text-red-400">Inputs you don't trust</div>
+    <div class="text-gray-400">→ Use Zod</div>
+  </div>
+</div>
+
+<div v-click class="flex items-start gap-4">
+  <span class="text-2xl">⚠️</span>
+  <div>
+    <div class="font-bold text-orange-400">Inputs you trust but don't control</div>
+    <div class="text-gray-400">→ Validate them with Zod</div>
+  </div>
+</div>
+
+<div v-click class="flex items-start gap-4">
+  <span class="text-2xl">✅</span>
+  <div>
+    <div class="font-bold text-green-400">Inputs you trust and control</div>
+    <div class="text-gray-400">→ Usually don't need Zod</div>
+  </div>
+</div>
+
+</div>
+
+---
+layout: center
+class: text-center
+---
+
 # Conclusion
 
 **TypeScript + Zod**, c'est :

@@ -5,6 +5,8 @@ image: "assets/images/icon.png"
 favicon: "/assets/images/icon.png"
 titleTemplate: "%s"
 monaco: true
+twoslash: true
+lineNumbers: true
 mdc: true
 overviewSnapshots: true
 fonts:
