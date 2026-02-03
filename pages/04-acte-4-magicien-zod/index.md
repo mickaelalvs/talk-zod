@@ -123,52 +123,151 @@ Zod est :
 ---
 
 # Le sort de protection
+La définition d'un schéma
 
+````md magic-move
 ```ts
-import { z } from "zod"
+type User = {
+  id: string;
+  email: string;
+  permissions: string[]
+}
+```
+```ts
+type User = {
+  id: string;
+  email: string;
+  permissions: string[]
+}
+
+// Devient
+```
+```ts
+type User = {
+  id: string;
+  email: string;
+  permissions: string[]
+}
+
+// Devient
+
+const UserSchema = z.object()
+```
+```ts
+type User = {
+  id: string;
+  email: string;
+  permissions: string[]
+}
+
+// Devient
 
 const UserSchema = z.object({
   id: z.string(),
   email: z.string().email(),
+  permissions: z.array(z.string())
 })
 ```
+````
+
+<br />
+
+<v-click>
+
+<h2>
+
+**Tout en existant au Runtime ! 🚀**
+
+</h2>
+
+</v-click> 
+
+---
+
+# Validation
+Les pouvoirs en action !
 
 <v-clicks>
 
-Ce schéma :
+Il nous suffit d'utiliser `.parse` ou `.safeParse` ! 🪄
 
-- existe au runtime
-- valide les données
-- sert de base aux types TypeScript
+```ts {monaco} {height:'auto'}
+import z from 'zod'
+
+const UserSchema = z.object({
+  name: z.string(),
+})
+
+export const getUser = async () =>  {
+  const data = await fetch('/api/user').then(res => res.json());
+  
+  return data;
+}
+```
+
+<div>
+
+Et en cas d'erreur :
+  - `parse()` throw une erreur
+  - `safeParse()` renvoie un objet contenant les informations de l'erreur
+
+</div>
 
 </v-clicks>
 
 ---
+punctuation: "..."
+---
 
-# Validation en action
+# Tellement de possibilitées 
+La boite à outils de Zod est bien rempli
 
-```ts
-const user = UserSchema.parse(data)
-```
+Zod nous met à disposition **bon nombres d'outils** pour aider à la validation
 
-<v-click>
+<div class="flex gap-2">
+<div class="flex-1" v-click>
+<h3>
 
-Résultat :
+Des primitives ...
 
-</v-click>
+</h3>
 
-<v-clicks>
+- `z.string()`
+- `z.number()`
+- `z.boolean()`
+- `z.undefined()`
+- `z.null()`
+- `z.bigint()`
+- `z.date()`
+- `z.enum()`
+- *Et bien plus encore*
 
-- données fiables si valides
-- erreur explicite sinon
 
-</v-clicks>
+</div>
+<div class="flex-1" v-click>
+<h3>
 
-<v-click>
+Et des utilitaires 🛠️
 
-**Plus de données fantômes.**
+</h3>
 
-</v-click>
+- `.min()` & `.max()`
+- `.length()`
+- `.gt()` & `.lt()`
+- `.positive()` & `.negative()`
+- `optional()`
+- `nullable()`
+- `nullish()`
+- *Et bien plus encore*
+
+</div>
+</div>
+
+
+---
+layout: iframe
+url: https://zod-playground.vercel.app/
+---
 
 ---
 
@@ -187,6 +286,10 @@ Zod peut sécuriser :
 
 <v-click>
 
-**Le runtime redevient prévisible.**
+<p class="font-size-4xl text-center pt-10 font-bold" style="color: var(--oz-zod-blue)">
+
+Le runtime redevient prévisible.
+
+</p>
 
 </v-click>
