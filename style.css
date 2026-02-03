@@ -64,11 +64,6 @@ strong {
   font-weight: 700;
 }
 
-/* Monaco container */
-.slidev-monaco-container {
-  height: 100%;
-}
-
 /* Tables */
 table {
   border-collapse: collapse;

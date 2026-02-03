@@ -47,13 +47,40 @@ Elle murmure des vérités dérangeantes :
 
 Zod a un coût :
 
-<v-clicks>
 
-- **Performance** : parsing à chaque appel
-- **Bundle size** : ~50kb minifié
-- **Complexité** : API à apprendre
+<div class="flex-1 grid grid-cols-3 text-center items-end mt-25">
+  <div
+    v-click
+    v-motion
+    :initial="{ opacity: 0, scale: 0.5 }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    class="flex flex-col items-center gap-6"
+  >
+    <img src="./assets/low-performance.png" class="h-40" />
+    <span class="text-base text-black text-xl"><strong>Performance :</strong><br />Les parsing n'est pas gratuit</span>
+  </div>
+  <div
+    v-click
+    v-motion
+    :initial="{ opacity: 0, scale: 0.5 }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    class="flex flex-col items-center gap-6"
+  >
+    <img src="./assets/bundle-size.png" class="h-40" />
+    <span class="text-base text-black text-xl"><strong>Bundle size : </strong><br/>~50kb minifié</span>
+  </div>
+  <div
+    v-click
+    v-motion
+    :initial="{ opacity: 0, scale: 0.5 }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    class="flex flex-col items-center gap-6"
+  >
+    <img src="./assets/alzheimer.png" class="h-40" />
+    <span class="text-base text-black text-xl"><strong>Complexité :</strong><br/>Nouvel outil à apprendre</span>
+  </div>
+</div>
 
-</v-clicks>
 
 ---
 
@@ -118,21 +145,108 @@ Optimisez là où ça compte, pas partout.
 
 # Les alternatives
 
-<v-clicks>
+<div class="grid grid-cols-4 gap-6 mt-12">
+  <div 
+    class="flex flex-col items-center gap-3"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, y: 20 }" 
+    :enter="{ opacity: 1, y: 0 }"
+    :duration="500"
+  >
+    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
+      <img src="./assets/valibot.jpeg" alt="Valibot" class="w-24 h-24 rounded-xl object-contain" />
+    </div>
+    <div class="text-center">
+      <strong class="text-xl">Valibot</strong>
+      <p class="text-sm opacity-80 mt-1">Plus léger (~5kb)<br/>tree-shakable</p>
+    </div>
+  </div>
 
-- **Valibot** : plus léger (~5kb), tree-shakable
-- **TypeBox** : génère aussi des JSON Schemas
-- **ArkType** : syntaxe plus proche de TypeScript
-- **Zod Mini** : version allégée officielle (expérimental)
+  <div 
+    class="flex flex-col items-center gap-3"
+    v-motion
+    v-click="2"
+    :initial="{ opacity: 0, y: 20 }" 
+    :enter="{ opacity: 1, y: 0 }"
+    :duration="500"
+  >
+    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
+      <img src="./assets/typebox.png" alt="TypeBox" class="w-24 h-24 rounded-xl object-contain" />
+    </div>
+    <div class="text-center">
+      <strong class="text-xl">TypeBox</strong>
+      <p class="text-sm opacity-80 mt-1">Génère aussi des<br/>JSON Schemas</p>
+    </div>
+  </div>
 
-</v-clicks>
+  <div 
+    class="flex flex-col items-center gap-3"
+    v-motion
+    v-click="3"
+    :initial="{ opacity: 0, y: 20 }" 
+    :enter="{ opacity: 1, y: 0 }"
+    :duration="500"
+  >
+    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
+      <img src="./assets/arktype.png" alt="ArkType" class="w-24 h-24 rounded-xl object-contain" />
+    </div>
+    <div class="text-center">
+      <strong class="text-xl">ArkType</strong>
+      <p class="text-sm opacity-80 mt-1">Syntaxe plus proche<br/>de TypeScript</p>
+    </div>
+  </div>
+
+  <div 
+    class="flex flex-col items-center gap-3"
+    v-motion
+    v-click="4"
+    :initial="{ opacity: 0, y: 20 }" 
+    :enter="{ opacity: 1, y: 0 }"
+    :duration="500"
+  >
+    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
+      <img src="./assets/zod.webp" alt="Zod Mini" class="w-24 h-24 rounded-xl object-contain opacity-60" />
+    </div>
+    <div class="text-center">
+      <strong class="text-xl">Zod Mini</strong>
+      <p class="text-sm opacity-80 mt-1">Version allégée<br/>officielle (expérimental)</p>
+    </div>
+  </div>
+</div>
+
+<div class="text-2xl mt-12" v-click="5">
+
+Choisissez l'outil adapté à votre **contexte**.
+
+</div>
+
+---
+
+# La naissance d'un standard
+Une interface commune
+
+En avril 2024, plusieurs créateurs de bibliothèques se sont regroupés pour créer ...
+
+<div 
+  class="flex justify-center items-center h-[250px]" 
+  v-motion
+  v-click
+  :initial="{ opacity: 0 }" 
+  :enter="{ opacity: 1 }"
+  :duration="500" 
+>
+  <div class="flex flex-col items-center gap-4">
+    <img src="./assets/standard_schema.png" alt="Standard Schema Logo" class="w-36" />
+    <strong class="text-3xl">Standard Schema</strong>
+  </div>
+</div>
 
 <v-click>
 
-Choisissez l'outil adapté à votre contexte.
+Un standard pour permettre à tout les outils d'interagir avec toutes les bibliothèques de validation de schémas
 
 </v-click>
-
 ---
 
 # La sorcière n'a pas gagné
@@ -143,16 +257,43 @@ Ces limites sont **connues et acceptables** :
 
 </v-click>
 
-<v-clicks>
+<div class="flex flex-col items-center gap-6 mt-20">
+  <div 
+    class="text-center"
+    v-motion
+    v-click
+    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :duration="600"
+  >
+    <p class="text-3xl font-bold text-gray-700">
+      L'utilisation de Zod a un coût ...
+    </p>
+  </div>
 
-- Le coût est payé aux frontières, pas partout
-- La sécurité runtime vaut le prix
-- Les alternatives existent si besoin
+  <div 
+    class="text-center"
+    v-motion
+    v-click
+    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :duration="600"
+  >
+    <p class="text-3xl font-bold" style="color: var(--oz-emerald);">
+      Mais qui assure une sécurité certaine
+    </p>
+  </div>
 
-</v-clicks>
-
-<v-click>
-
-**Zod reste le choix pragmatique pour la plupart des cas.**
-
-</v-click>
+  <div 
+    class="text-center"
+    v-motion
+    v-click
+    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
+    :enter="{ opacity: 1, y: 0, scale: 1 }"
+    :duration="600"
+  >
+    <p class="text-3xl font-bold text-gray-700">
+      Zod reste le choix pragmatique pour la plupart des cas.
+    </p>
+  </div>
+</div>
