@@ -1,6 +1,3 @@
----
----
-
 <div class="h-[90%] flex flex-col items-center justify-center gap-6">
 
 <div class="flex flex-col items-center gap-3">
@@ -18,3 +15,7 @@
 </div>
 
 </div>
+
+<!--
+Rajouter "Et on parle même pas de JS"
+-->
