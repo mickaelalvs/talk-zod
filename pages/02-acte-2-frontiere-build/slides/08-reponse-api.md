@@ -1,6 +1,3 @@
----
----
-
 # Réponse d'API
 
 <script setup>
@@ -82,3 +79,7 @@ user.name.toUpperCase()
   class="mt-4 w-full flex justify-center">
   <span class="text-2xl font-bold px-5 py-3">Pourtant avant on était sûr, TypeScript a rien dit...</span>
 </div>
+
+<!--
+"Typescript n'a rien dit"
+-->

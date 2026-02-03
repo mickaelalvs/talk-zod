@@ -68,3 +68,7 @@ console.log(user)
     <span class="text-base font-semibold text-black">Écosystème<br/>moderne</span>
   </div>
 </div>
+
+<!--
+Fix le fait que l'autocomplétion dépasse du cadre, overflow-hidden
+-->

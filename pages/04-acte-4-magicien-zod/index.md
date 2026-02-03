@@ -100,6 +100,10 @@ transition: fade-out
   </v-switch>
 </div>
 
+<!--
+Zoom
+-->
+
 ---
 
 # L'apparition de Zod
@@ -119,6 +123,18 @@ Zod est :
 **Un seul artefact pour deux mondes.**
 
 </v-click>
+
+<!--
+Slide présentation zod
+
+Logo mit en valeur
+
+une phrase un peu précise
+
+petite liste de ce que c'est avec des logos
+
+"TS first, mais utilisable en JS"
+-->
 
 ---
 
@@ -180,7 +196,34 @@ const UserSchema = z.object({
 
 </h2>
 
-</v-click> 
+</v-click>
+
+<!--
+Pourquoi y'a un espace entre le titre et le sous titre ?
+
+=> Faire un nouveau layout
+
+Passer les bloc de code en MacWindow et en TwoSlash / Monaco
+
+Enlever le fait qu'on compare en direct a TS
+
+PLAN POUR LA PARTIE EXEMPLE
+
+- Présentation Zod
+- En quoi ça résout le problème
+   => On a plus les type, comment on valide les données
+- Zoom dans zod, qu'est ce que c'est qu'un schéma
+- Un fois qu'on a le schéma et les données, qu'est ce que fait Zod ? Zod playground
+- Transition avec nos problèmatique ? Est ce qu'on peut retrouver la sérénité d'avant le build (peut être storytelling pas sur)
+- 3 exemples
+   => Requêtes
+   => Formulaire
+   => QueryParams
+- Limites 
+   => Perf
+- Conclusion
+   => Quand prendre Zod
+-->
 
 ---
 

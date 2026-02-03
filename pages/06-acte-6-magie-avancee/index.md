@@ -341,6 +341,10 @@ const ManagerSchema = PersonSchema.extends({
   </div>
 </div>
 
+<!--
+Ajouter un "Et bien plus"
+-->
+
 ---
 
 # L'écosystème Zod

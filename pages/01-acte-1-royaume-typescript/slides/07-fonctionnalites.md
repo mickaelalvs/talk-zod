@@ -77,3 +77,7 @@ function handle(value: string | number) {
 </div>
 
 </div>
+
+<!--
+Recaler les apparitions le logo
+-->
