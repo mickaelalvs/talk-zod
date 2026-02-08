@@ -45,255 +45,220 @@ Elle murmure des vérités dérangeantes :
 
 # Ce n'est pas de la magie
 
-Zod a un coût :
 
+<div class="grid grid-cols-3 gap-8 mt-30">
+  <div
+    v-click
+    v-motion
+    :initial="{ opacity: 0, scale: 0.8 }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    class="flex flex-col items-center gap-4"
+  >
+    <img src="./assets/low-performance.png" class="h-28" />
+    <div class="text-center">
+      <div class="text-lg font-semibold text-[#3168B7] mb-1">Performance</div>
+      <span class="text-sm text-[#2D3748]">Le parsing n'est pas gratuit</span>
+    </div>
+  </div>
 
-<div class="flex-1 grid grid-cols-3 text-center items-end mt-25">
   <div
     v-click
     v-motion
-    :initial="{ opacity: 0, scale: 0.5 }"
+    :initial="{ opacity: 0, scale: 0.8 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-    class="flex flex-col items-center gap-6"
+    class="flex flex-col items-center gap-4"
   >
-    <img src="./assets/low-performance.png" class="h-40" />
-    <span class="text-base text-black text-xl"><strong>Performance :</strong><br />Les parsing n'est pas gratuit</span>
+    <img src="./assets/bundle-size.png" class="h-28" />
+    <div class="text-center">
+      <div class="text-lg font-semibold text-[#3168B7] mb-1">Bundle Size</div>
+      <span class="text-sm text-[#2D3748]">~50kb minifié</span>
+    </div>
   </div>
+
   <div
     v-click
     v-motion
-    :initial="{ opacity: 0, scale: 0.5 }"
+    :initial="{ opacity: 0, scale: 0.8 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-    class="flex flex-col items-center gap-6"
+    class="flex flex-col items-center gap-4"
   >
-    <img src="./assets/bundle-size.png" class="h-40" />
-    <span class="text-base text-black text-xl"><strong>Bundle size : </strong><br/>~50kb minifié</span>
-  </div>
-  <div
-    v-click
-    v-motion
-    :initial="{ opacity: 0, scale: 0.5 }"
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-    class="flex flex-col items-center gap-6"
-  >
-    <img src="./assets/alzheimer.png" class="h-40" />
-    <span class="text-base text-black text-xl"><strong>Complexité :</strong><br/>Nouvel outil à apprendre</span>
+    <img src="./assets/alzheimer.png" class="h-28" />
+    <div class="text-center">
+      <div class="text-lg font-semibold text-[#3168B7] mb-1">Complexité DX</div>
+      <span class="text-sm text-[#2D3748]">Un outil de plus à maîtriser</span>
+    </div>
   </div>
 </div>
 
-
 ---
 
-# Le coût de la validation
+# Zod ne remplace pas TypeScript
 
-```ts
-// ❌ Ne pas faire dans une boucle hot path
-for (const item of millionsOfItems) {
-  const validated = Schema.parse(item) // Coût à chaque itération
-}
-```
+<div class="grid grid-cols-2 gap-12 mt-12">
+
+<div v-click v-motion :initial="{ opacity: 0, x: -30 }" :enter="{ opacity: 1, x: 0, transition: { duration: 500 } }">
+  <div class="flex justify-center mb-4">
+    <img src="/assets/images/ts.png" class="h-20" />
+  </div>
+  <div class="bg-[#F5F5F5] border border-[#2D3748] rounded-lg p-5">
+    <ul class="space-y-3 text-[#2D3748]">
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>Validation <strong>statique</strong> (compile-time)</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>S'efface à la compilation</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>Protège le <strong>code interne</strong></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<div v-click v-motion :initial="{ opacity: 0, x: 30 }" :enter="{ opacity: 1, x: 0, transition: { duration: 500 } }">
+  <div class="flex justify-center mb-4">
+    <img src="./assets/zod.webp" class="h-20" />
+  </div>
+  <div class="bg-[#F5F5F5] border border-[#2D3748] rounded-lg p-5">
+    <ul class="space-y-3 text-[#2D3748]">
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>Validation <strong>dynamique</strong> (runtime)</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>S'exécute dans le bundle</span>
+      </li>
+      <li class="flex items-start gap-2">
+        <span class="text-[#3168B7]">→</span>
+        <span>Protège les <strong>frontières</strong></span>
+      </li>
+    </ul>
+  </div>
+</div>
+
+</div>
 
 <v-click>
-
-```ts
-// ✅ Valider une fois à l'entrée
-const validatedItems = Schema.array().parse(millionsOfItems)
-for (const item of validatedItems) {
-  // Déjà validé, pas de coût supplémentaire
-}
-```
-
+<div class="mt-12 text-center text-2xl text-[#2D3748]">
+  Ils sont <strong class="text-[#3168B7]">complémentaires</strong>, pas concurrents.
+</div>
 </v-click>
-
----
-
-# Benchmarks
-
-| Librairie | ops/sec | Taille |
-|-----------|---------|--------|
-| Zod | ~300k | ~50kb |
-| Valibot | ~500k | ~5kb |
-| TypeBox | ~800k | ~30kb |
-| ArkType | ~1M | ~40kb |
-
-<v-click>
-
-**En pratique** : la différence est négligeable aux frontières (API, forms).
-
-</v-click>
-
-<v-click>
-
-Optimisez là où ça compte, pas partout.
-
-</v-click>
-
----
-
-# Quand NE PAS utiliser Zod
-
-<v-clicks>
-
-- Données internes déjà typées
-- Hot paths critiques en performance
-- Projets très légers (overkill)
-- Validation simple → `typeof` suffit
-
-</v-clicks>
 
 ---
 
 # Les alternatives
 
-<div class="grid grid-cols-4 gap-6 mt-12">
-  <div 
-    class="flex flex-col items-center gap-3"
-    v-motion
-    v-click="1"
-    :initial="{ opacity: 0, y: 20 }" 
-    :enter="{ opacity: 1, y: 0 }"
-    :duration="500"
-  >
-    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
-      <img src="./assets/valibot.jpeg" alt="Valibot" class="w-24 h-24 rounded-xl object-contain" />
-    </div>
-    <div class="text-center">
-      <strong class="text-xl">Valibot</strong>
-      <p class="text-sm opacity-80 mt-1">Plus léger (~5kb)<br/>tree-shakable</p>
-    </div>
+<div class="flex justify-center items-center gap-15 mt-15">
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="flex flex-col items-center gap-3">
+    <img src="./assets/zod.webp" class="h-20" />
+    <span class="text-sm font-bold text-[#2D3748] border border-[#2D3748] rounded px-3 py-1">Zod Mini</span>
   </div>
-
-  <div 
-    class="flex flex-col items-center gap-3"
-    v-motion
-    v-click="2"
-    :initial="{ opacity: 0, y: 20 }" 
-    :enter="{ opacity: 1, y: 0 }"
-    :duration="500"
-  >
-    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
-      <img src="./assets/typebox.png" alt="TypeBox" class="w-24 h-24 rounded-xl object-contain" />
-    </div>
-    <div class="text-center">
-      <strong class="text-xl">TypeBox</strong>
-      <p class="text-sm opacity-80 mt-1">Génère aussi des<br/>JSON Schemas</p>
-    </div>
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="flex flex-col items-center gap-3">
+    <img src="./assets/valibot.svg" class="h-20" />
+    <span class="text-sm font-bold text-[#2D3748] border border-[#2D3748] rounded px-3 py-1">Valibot</span>
   </div>
-
-  <div 
-    class="flex flex-col items-center gap-3"
-    v-motion
-    v-click="3"
-    :initial="{ opacity: 0, y: 20 }" 
-    :enter="{ opacity: 1, y: 0 }"
-    :duration="500"
-  >
-    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
-      <img src="./assets/arktype.png" alt="ArkType" class="w-24 h-24 rounded-xl object-contain" />
-    </div>
-    <div class="text-center">
-      <strong class="text-xl">ArkType</strong>
-      <p class="text-sm opacity-80 mt-1">Syntaxe plus proche<br/>de TypeScript</p>
-    </div>
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="flex flex-col items-center gap-3">
+    <img src="./assets/typebox.svg" class="h-20" />
+    <span class="text-sm font-bold text-[#2D3748] border border-[#2D3748] rounded px-3 py-1">TypeBox</span>
   </div>
-
-  <div 
-    class="flex flex-col items-center gap-3"
-    v-motion
-    v-click="4"
-    :initial="{ opacity: 0, y: 20 }" 
-    :enter="{ opacity: 1, y: 0 }"
-    :duration="500"
-  >
-    <div class="w-28 h-28 flex items-center justify-center bg-white/10 rounded-2xl shadow-lg">
-      <img src="./assets/zod.webp" alt="Zod Mini" class="w-24 h-24 rounded-xl object-contain opacity-60" />
-    </div>
-    <div class="text-center">
-      <strong class="text-xl">Zod Mini</strong>
-      <p class="text-sm opacity-80 mt-1">Version allégée<br/>officielle (expérimental)</p>
-    </div>
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="flex flex-col items-center gap-3">
+    <img src="./assets/arktype.png" class="h-20" />
+    <span class="text-sm font-bold text-[#2D3748] border border-[#2D3748] rounded px-3 py-1">ArkType</span>
+  </div>
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="flex flex-col items-center gap-3">
+    <img src="./assets/typia.png" class="h-20" />
+    <span class="text-sm font-bold text-[#2D3748] border border-[#2D3748] rounded px-3 py-1">Typia</span>
   </div>
 </div>
 
-<div class="text-2xl mt-12" v-click="5">
+ 
 
-Choisissez l'outil adapté à votre **contexte**.
-
+<v-click>
+<div class="grid grid-cols-3 gap-x-8 gap-y-2 mt-15 text-[#2D3748] max-w-4xl mx-auto">
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Performances au Runtime</div>
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Taille du bundle</div>
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Facilité d'écriture</div>
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Intégration IDE</div>
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Écosystème TypeScript</div>
+  <div class="flex items-center gap-2"><span class="text-[#3168B7]">→</span> Features additionnelles</div>
 </div>
+</v-click>
+
+<v-click>
+<div class="mt-12 text-center text-xl text-[#2D3748] italic font-bold">
+  Des philosophies et des fonctionnements <span v-mark="{ at: 7, type: 'underline', color: '#3168B7' }">très différents</span>.
+</div>
+</v-click> 
+<v-click>
+<div class="mt-4 text-center text-lg text-[#2D3748]">
+  Mais un <strong class="text-[#3168B7]">objectif commun</strong> : valider les données au runtime !
+</div>
+</v-click>
 
 ---
 
 # La naissance d'un standard
-Une interface commune
 
-En avril 2024, plusieurs créateurs de bibliothèques se sont regroupés pour créer ...
-
-<div 
-  class="flex justify-center items-center h-[250px]" 
-  v-motion
-  v-click
-  :initial="{ opacity: 0 }" 
-  :enter="{ opacity: 1 }"
-  :duration="500" 
->
-  <div class="flex flex-col items-center gap-4">
-    <img src="./assets/standard_schema.png" alt="Standard Schema Logo" class="w-36" />
-    <strong class="text-3xl">Standard Schema</strong>
+<div v-click class="flex justify-center items-center gap-16 mt-16">
+  <div class="grid grid-cols-2 gap-6">
+    <img src="./assets/zod.webp" class="h-16" />
+    <img src="./assets/valibot.svg" class="h-20" />
+    <img src="./assets/arktype.png" class="h-16" />
+    <img src="./assets/typebox.svg" class="h-18" />
   </div>
+  <span class="text-6xl text-[#3168B7]">→</span>
+  <img src="./assets/standard_schema.png" class="h-40" />
 </div>
 
 <v-click>
-
-Un standard pour permettre à tout les outils d'interagir avec toutes les bibliothèques de validation de schémas
-
+<div class="mt-20 text-center text-lg text-[#2D3748] text-balance">
+  Un standard pour permettre à <span v-mark="{ at: 2, type: 'highlight', color: '#3168B7' }" class="text-white">tous les outils</span> d'interagir avec <span v-mark="{ at: 2, type: 'highlight', color: '#3168B7' }" class="text-white">toutes les bibliothèques</span> de validation.
+</div>
 </v-click>
+
+<div v-click="1" class="mt-18 text-center text-sm text-[#3168B7]">
+  <a href="https://standardschema.dev/" target="_blank">standardschema.dev</a>
+</div>
+
+
 ---
 
-# La sorcière n'a pas gagné
+# Quand (ne pas) utiliser Zod ?
 
-<v-click>
+<div class="flex flex-col gap-4 mt-6 max-w-3xl mx-auto">
 
-Ces limites sont **connues et acceptables** :
+<div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="flex items-center gap-3 bg-[#F5F5F5] border border-[#2D3748] px-4 py-4 rounded">
+  <img src="./assets/icon-check.png" class="h-8" />
+  <div class="text-base font-bold text-[#2D3748] flex-1">Des inputs que vous ne contrôlez pas</div>
+  <div class="flex items-center gap-2 text-sm">→ <strong class="text-[#3168B7]">Utilisez</strong> <img src="./assets/zod.webp" class="inline h-4" /></div>
+</div>
 
-</v-click>
+<div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="flex items-center gap-3 bg-[#F5F5F5] border border-[#2D3748] px-4 py-4 rounded">
+  <img src="./assets/icon-check.png" class="h-8" />
+  <div class="text-base font-bold text-[#2D3748] flex-1">Des inputs de confiance mais externes</div>
+  <div class="flex items-center gap-2 text-sm">→ <strong class="text-[#3168B7]">Validez avec</strong> <img src="./assets/zod.webp" class="inline h-4" /></div>
+</div>
 
-<div class="flex flex-col items-center gap-6 mt-20">
-  <div 
-    class="text-center"
-    v-motion
-    v-click
-    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :duration="600"
-  >
-    <p class="text-3xl font-bold text-gray-700">
-      L'utilisation de Zod a un coût ...
-    </p>
-  </div>
+<div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="flex items-center gap-3 bg-[#F5F5F5] border border-[#2D3748] px-4 py-4 rounded">
+  <img src="./assets/icon-cross.png" class="h-8" />
+  <div class="text-base font-bold text-[#2D3748] flex-1">Des inputs internes et contrôlés</div>
+  <div class="flex items-center gap-2 text-sm">→ <strong>Pas besoin de</strong> <img src="./assets/zod.webp" class="inline h-4" /></div>
+</div>
 
-  <div 
-    class="text-center"
-    v-motion
-    v-click
-    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :duration="600"
-  >
-    <p class="text-3xl font-bold" style="color: var(--oz-emerald);">
-      Mais qui assure une sécurité certaine
-    </p>
-  </div>
+<div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="flex items-center gap-3 bg-[#F5F5F5] border border-[#2D3748] px-4 py-4 rounded">
+  <img src="./assets/icon-cross.png" class="h-8" />
+  <div class="text-base font-bold text-[#2D3748] flex-1">Des données passées entre vos fonctions</div>
+  <div class="flex items-center gap-2 text-sm">→ <img src="/assets/images/ts.png" class="inline h-4" /> <strong>suffit</strong></div>
+</div>
 
-  <div 
-    class="text-center"
-    v-motion
-    v-click
-    :initial="{ opacity: 0, y: 30, scale: 0.9 }" 
-    :enter="{ opacity: 1, y: 0, scale: 1 }"
-    :duration="600"
-  >
-    <p class="text-3xl font-bold text-gray-700">
-      Zod reste le choix pragmatique pour la plupart des cas.
-    </p>
-  </div>
+<div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="flex items-center gap-3 bg-[#F5F5F5] border border-[#2D3748] px-4 py-4 rounded">
+  <img src="./assets/icon-cross.png" class="h-8" />
+  <div class="text-base font-bold text-[#2D3748] flex-1">Des boucles critiques en performance</div>
+  <div class="flex items-center gap-2 text-sm">→ <strong>Pas besoin de</strong> <img src="./assets/zod.webp" class="inline h-4" /></div>
+</div>
+
 </div>
