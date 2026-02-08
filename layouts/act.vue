@@ -5,6 +5,10 @@ defineProps({
   actNumber: {
     type: String,
     default: ''
+  },
+  customLabel: {
+    type: String,
+    default: ''
   }
 })
 </script>
@@ -15,7 +19,7 @@ defineProps({
     <div class="content">
       <!-- Numéro d'acte -->
       <div class="act-label">
-        Acte {{ actNumber }}
+        {{ customLabel || `Acte ${actNumber}` }}
       </div>
       
       <!-- Titre de l'acte -->

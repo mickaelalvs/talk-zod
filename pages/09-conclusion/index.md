@@ -1,67 +1,47 @@
 ---
-layout: center
-class: text-center
+layout: none
+class: p-0 m-0
 ---
 
-# Quand utiliser Zod ?
+<CloudBackground />
 
-<div class="text-left max-w-2xl mx-auto mt-8 space-y-6">
-
-<div v-click class="flex items-start gap-4">
-  <span class="text-2xl">🚫</span>
-  <div>
-    <div class="font-bold text-red-400">Inputs you don't trust</div>
-    <div class="text-gray-400">→ Use Zod</div>
+<div class="absolute inset-0 flex flex-col items-center justify-center z-10">
+  <div class="text-[#F6E3D3] text-3xl mb-12" style="font-family: 'Noticia Text', serif; text-shadow: 0.5px 0.5px 0 #251007, 1px 1px 0 #251007, 1.5px 1.5px 0 #251007, 2px 2px 0 #251007, 2.5px 2.5px 0 #251007, 3px 3px 0 #251007, 3.5px 3.5px 0 #251007, 4px 4px 0 #251007, 4.5px 4.5px 0 #251007, 5px 5px 0 #251007, 5.5px 5.5px 0 #251007, 6px 6px 0 #251007;">
+    Pour aller plus loin
+  </div>
+  
+  <div class="flex flex-col items-center gap-2 w-full px-16 text-[#F6E3D3] text-xl" style="font-family: 'Noticia Text', serif; text-shadow: 0.5px 0.5px 0 #251007, 1px 1px 0 #251007, 1.5px 1.5px 0 #251007, 2px 2px 0 #251007, 2.5px 2.5px 0 #251007, 3px 3px 0 #251007, 3.5px 3.5px 0 #251007, 4px 4px 0 #251007;">
+    <div class="flex items-center w-[80%]">
+      <span class="whitespace-nowrap">Zod Playground</span>
+      <span class="flex-grow mx-2 overflow-hidden opacity-50" style="letter-spacing: 0.2em;">............................................................................................................</span>
+      <span class="whitespace-nowrap">zod.dev/playground</span>
+    </div>
+    <div class="flex items-center w-[80%]">
+      <span class="whitespace-nowrap">Matt Pocock</span>
+      <span class="flex-grow mx-2 overflow-hidden opacity-50" style="letter-spacing: 0.2em;">............................................................................................................</span>
+      <span class="whitespace-nowrap">Total TypeScript (YouTube)</span>
+    </div>
+    <div class="flex items-center w-[80%]">
+      <span class="whitespace-nowrap">Documentation</span>
+      <span class="flex-grow mx-2 overflow-hidden opacity-50" style="letter-spacing: 0.2em;">............................................................................................................</span>
+      <span class="whitespace-nowrap">zod.dev</span>
+    </div>
+    <div class="flex items-center w-[80%]">
+      <span class="whitespace-nowrap">Standard Schema</span>
+      <span class="flex-grow mx-2 overflow-hidden opacity-50" style="letter-spacing: 0.2em;">............................................................................................................</span>
+      <span class="whitespace-nowrap">standardschema.dev</span>
+    </div>
+    <div class="flex items-center w-[80%]">
+      <span class="whitespace-nowrap">Benchmarks</span>
+      <span class="flex-grow mx-2 overflow-hidden opacity-50" style="letter-spacing: 0.2em;">............................................................................................................</span>
+      <span class="whitespace-nowrap">moltar.github.io/typescript-runtime-type-benchmarks</span>
+    </div>
   </div>
 </div>
 
-<div v-click class="flex items-start gap-4">
-  <span class="text-2xl">⚠️</span>
-  <div>
-    <div class="font-bold text-orange-400">Inputs you trust but don't control</div>
-    <div class="text-gray-400">→ Validate them with Zod</div>
-  </div>
-</div>
-
-<div v-click class="flex items-start gap-4">
-  <span class="text-2xl">✅</span>
-  <div>
-    <div class="font-bold text-green-400">Inputs you trust and control</div>
-    <div class="text-gray-400">→ Usually don't need Zod</div>
-  </div>
-</div>
-
-</div>
-
----
-layout: center
-class: text-center
----
-
-# Conclusion
-
-**TypeScript + Zod**, c'est :
-
-<v-clicks>
-
-des types du build
-
-jusqu'au runtime
-
-</v-clicks>
-
----
-
-# Pour aller plus loin
-
-<v-clicks>
-
-- **Zod Playground** : zod.dev/playground
-- **Matt Pocock** : Total TypeScript (YouTube)
-- **Documentation** : zod.dev
-- **Standard Schema** : https://standardschema.dev/
-
-</v-clicks>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Noticia+Text:wght@400;700&display=swap');
+</style>
 
 ---
 layout: none
