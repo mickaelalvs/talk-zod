@@ -1,4 +1,8 @@
-# Quand (ne pas) utiliser <img src="/assets/images/zod.webp" class="inline h-10 align-middle" /> ?
+---
+punctuation: "?"
+---
+
+# Quand (ne pas) utiliser <img src="/assets/images/zod.webp" class="inline h-10 align-middle" />
 
 <div class="flex flex-col gap-4 mt-6 max-w-3xl mx-auto">
 
