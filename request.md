@@ -108,3 +108,62 @@ z.object().required() // Every field is required
     padding: 1rem
 }
 </style>
+
+---
+
+# Inférence automatique
+
+
+<MacWindow title="Inférence de type" height="fit-content">
+
+````md magic-move
+```ts
+export const PostRequestBodySchema = z.object({
+  id: z.uuid(),
+  title: z.string().min(4).max(100),
+  pageCount: z.number().min(1),
+  thumbnail: z.url(),
+  hasBeenRead: z.boolean(),
+})
+```
+```ts
+export const PostRequestBodySchema = z.object({
+  id: z.uuid(),
+  title: z.string().min(4).max(100),
+  pageCount: z.number().min(1),
+  thumbnail: z.url(),
+  hasBeenRead: z.boolean(),
+})
+
+const body: [???] = {...}
+```
+```ts
+export const PostRequestBodySchema = z.object({
+  id: z.uuid(),
+  title: z.string().min(4).max(100),
+  pageCount: z.number().min(1),
+  thumbnail: z.url(),
+  hasBeenRead: z.boolean(),
+})
+
+type PostRequestBody = z.infer<typeof PostRequestBodySchema>;
+
+const body: PostRequestBody = {...}
+```
+````
+
+</MacWindow>
+
+<v-click>
+<h2 class="pt-10">
+
+Le schéma deviens la source de vérité ! 🗺️
+
+</h2>
+</v-click>
+
+<v-click>
+
+Zod nous protège au **Runtime** ET au **BuildTime**
+
+</v-click>

@@ -51,7 +51,7 @@ import { z } from "zod"
 
 const UserSchema = z.object({
   id: z.string(),
-  email: z.string().email(),
+  email: z.email(),
 })
 ```
 ```ts
@@ -59,7 +59,7 @@ import { z } from "zod"
 
 const UserSchema = z.object({
   id: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   age: z.number().min(0),
 })
 ```
@@ -68,7 +68,7 @@ import { z } from "zod"
 
 const UserSchema = z.object({
   id: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   age: z.number().min(0),
   isActive: z.boolean(),
 })
@@ -78,7 +78,7 @@ import { z } from "zod"
 
 const UserSchema = z.object({
   id: z.string(),
-  email: z.string().email(),
+  email: z.email(),
   age: z.number().min(0),
   isActive: z.boolean(),
   nickname: z.string().optional(),

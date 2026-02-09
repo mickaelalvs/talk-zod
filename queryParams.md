@@ -23,7 +23,7 @@ En ajoutant des .coerce on peut arriver à un number et une Date
 
 ---
 
-# Sorts de transformation
+# Coercition de type
 
 <MacWindow title="Coercition de type disponible" height="fit-content" v-click>
 
@@ -94,7 +94,7 @@ On montre aussi la possibilité d'ajouter un .nullable() pour envoyer null au ba
 
 ---
 
-# Sorts de transformation
+# Transformation et pre-processing
 
 <MacWindow title="Transform" class="-mt-6" height="fit-content">
 
@@ -123,3 +123,38 @@ console.log(TransformSchema.parse({
 Alors que `.transform` s'effectue après !
 
 </div>
+
+---
+
+# Et l'inférence ?
+
+<MacWindow title="" height="fit-content">
+
+````md magic-move
+```ts
+const Schema = z.object({
+  page: z.coerce.number(),
+  releaseDate: z.coerce.date(),
+  genre: z.string.transform(value => value.split(','))
+})
+```
+```ts
+const Schema = z.object({
+  page: z.coerce.number(),
+  releaseDate: z.coerce.date(),
+  genre: z.string.transform(value => value.split(','))
+})
+
+type Input = z.input<typeof Schema>;   // { page: string, releaseDate: string, genre: string }
+type Output = z.output<typeof Schema>; // { page: number, releaseDate: Date, genre: string[] }
+```
+
+````
+
+</MacWindow>
+
+<v-click>
+
+*Peut s'avérer très utile dans le cas d'un formulaire !*
+
+</v-click>

@@ -11,7 +11,7 @@
 ```ts
 const ContactSchema = z.object({
   name: z.string(),
-  email: z.string().email(),
+  email: z.email(),
 })
 
 const CustomerSchema = z.object({

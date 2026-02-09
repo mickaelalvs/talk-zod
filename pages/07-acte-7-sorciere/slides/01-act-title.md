@@ -1,6 +1,6 @@
 ---
 layout: act
-actNumber: VII
+actNumber: VI
 ---
 
 La Sorcière de l'Ouest
