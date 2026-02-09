@@ -1,62 +1,34 @@
 ---
 layout: act
-actNumber: ""
+customLabel: "The End"
 ---
-
-Épilogue — La vérité
 
 ---
 layout: story
 ---
 
-Dorothy claque ses **souliers rouges**...
+Au final, on réalise quelque chose d'important…
 
 <v-click>
 
-Et réalise quelque chose d'important.
+Le royaume de **TypeScript** était déjà magique.
 
 </v-click>
 
 <v-click>
 
-Le magicien n'était qu'un **homme ordinaire**.
+Mais sa magie a des limites : elle s'arrêtait aux **frontières du build**.
 
 </v-click>
 
 <v-click>
 
-La vraie magie était en elle depuis le début.
+**Zod** et les autres ne sont pas des remplacements.
 
 </v-click>
 
 <v-click>
 
-**Et pour nous ?**
+C'est des magiciens qui **protègent le runtime** et relient les deux mondes...
 
 </v-click>
-
----
-layout: center
----
-
-# Comme dans *Le Magicien d'Oz*…
-
-<v-click>
-
-La vraie magie, ce n'est pas Zod.
-
-</v-click>
-
-<v-click>
-
-C'est :
-
-</v-click>
-
-<v-clicks>
-
-- des contrats clairs
-- une seule source de vérité
-- la confiance dans les données
-
-</v-clicks>
