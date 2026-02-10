@@ -113,26 +113,18 @@ Revoir design phrase de fin
 
 <MacWindow title="" height="fit-content">
 
-````md magic-move
-```ts
+```ts {3-7|9|10|all} twoslash
+import { z } from 'zod';
+
 const Schema = z.object({
   page: z.coerce.number(),
   releaseDate: z.coerce.date(),
-  genre: z.string.transform(value => value.split(','))
-})
-```
-```ts
-const Schema = z.object({
-  page: z.coerce.number(),
-  releaseDate: z.coerce.date(),
-  genre: z.string.transform(value => value.split(','))
+  genre: z.string().transform(value => value.split(','))
 })
 
-type Input = z.input<typeof Schema>;   // { page: string, releaseDate: string, genre: string }
+type Input = z.input<typeof Schema>;   // { page: unknown, releaseDate: unknown, genre: string }
 type Output = z.output<typeof Schema>; // { page: number, releaseDate: Date, genre: string[] }
 ```
-
-````
 
 </MacWindow>
 
@@ -143,7 +135,5 @@ type Output = z.output<typeof Schema>; // { page: number, releaseDate: Date, gen
 </v-click>
 
 <!--
-Ajouter twoslash
-
 Voir design phrase de fin (Logo Form)
 -->
