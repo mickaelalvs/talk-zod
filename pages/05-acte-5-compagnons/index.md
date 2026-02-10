@@ -98,3 +98,61 @@ src: ../../request.md
 ---
 src: ../../queryParams.md
 ---
+---
+transition: view-transition
+---
+
+# Cas Réel
+
+<div class="flex justify-center items-stretch gap-8">
+<div class="form-window-container">
+<MacWindow title="formulaire" height="fit-content">
+    <RealForm />
+</MacWindow>
+</div>
+</div>
+
+<style>
+.form-window-container {
+  view-transition-name: animated-form;
+}
+
+::view-transition-old(animated-form),
+::view-transition-new(animated-form) {
+  animation: none;
+}
+</style>
+
+---
+transition: view-transition
+---
+
+# Cas Réel
+
+<div class="flex justify-center items-stretch gap-8">
+<div class="form-window-container">
+<MacWindow title="formulaire" height="fit-content">
+    <RealForm />
+</MacWindow>
+</div>
+<div class='w-1/2 z-0'>
+<MacWindow title="schema" height="fit-content">
+<div style="max-height: 380px; overflow-y: scroll">
+
+<<< ../../components/forms/real-schema.ts
+
+</div>
+</MacWindow>
+</div>
+</div>
+
+<style>
+.form-window-container {
+  view-transition-name: animated-form;
+}
+
+::view-transition-old(animated-form),
+::view-transition-new(animated-form) {
+  animation: none;
+}
+</style>
