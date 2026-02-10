@@ -21,9 +21,9 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
     style="top: -12%; right: 27%; transform: rotate(-7deg);"
     v-motion
-    v-click="2"
+    v-click="1"
     :initial="{ opacity: 0, scale: 0.5 }" 
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 200 } }"
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
@@ -37,9 +37,9 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
     style="top: 25%; right: 10%; transform: rotate(4deg);"
     v-motion
-    v-click="3"
+    v-click="1"
     :initial="{ opacity: 0, scale: 0.5 }" 
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 400 } }"
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
@@ -53,9 +53,9 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50"
     style="bottom: 35%; left: 30%; transform: rotate(-5deg);"
     v-motion
-    v-click="4"
+    v-click="1"
     :initial="{ opacity: 0, scale: 0.5 }" 
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 600 } }"
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
@@ -69,9 +69,9 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
     style="bottom: 15%; right: 5%; transform: rotate(6deg);"
     v-motion
-    v-click="5"
+    v-click="1"
     :initial="{ opacity: 0, scale: 0.5 }" 
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 800 } }"
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
@@ -85,9 +85,9 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
     style="bottom: 4%; left: 1%; transform: rotate(15deg);"
     v-motion
-    v-click="6"
+    v-click="1"
     :initial="{ opacity: 0, scale: 0.5 }" 
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 1000 } }"
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
@@ -101,7 +101,7 @@
     class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-max"
     style="bottom: 50%; left: 50%; translate: -50% 25%"
     v-motion
-    v-click="7"
+    v-click="2"
     :initial="{ opacity: 0, scale: 0.5 }" 
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
     :duration="500"
@@ -111,10 +111,6 @@
     </div>
   </div>
 </div>
-
-<!--
-Afficher d'un coup (avec un stagger)
--->
 
 ---
 
