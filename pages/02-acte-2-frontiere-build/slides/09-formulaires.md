@@ -53,7 +53,7 @@ const doSubmit = () => {
   </div>
 
 ```ts {*}{lines:true} twoslash
-interface FormData {
+interface UserFormData {
   email: string
   age: number
 }
@@ -64,7 +64,7 @@ function handleSubmit(event: SubmitEvent) {
   const data = {
     email: form.email.value,
     age: form.age.value,
-  } as FormData
+  } as UserFormData
   
   const ageNextYear = data.age + 1
 }
@@ -72,12 +72,8 @@ function handleSubmit(event: SubmitEvent) {
 
 </MacWindow>
 
-<div v-click="1" class="absolute right-[300px] bottom-[170px] flex flex-col items-start gap-0">
-  <span v-mark="{ at: 1, color: '#D45656', type: 'circle' }" class="text-lg font-bold opacity-0">as FormData</span>
+<div v-click="1" class="absolute right-[260px] bottom-[170px] flex flex-col items-start gap-0">
+  <span v-mark="{ at: 1, color: '#D45656', type: 'circle' }" class="text-lg font-bold opacity-0">as UserFormData</span>
 </div>
 
 </div>
-
-<!--
-Rename FormData en UserFormData ou UserData
--->
