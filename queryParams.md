@@ -15,17 +15,8 @@ transition: view-transition
 </div>
 </div>
 
-<!--
-la validation passe, mais on a des strings à l'arrivée
-
-En ajoutant des .coerce on peut arriver à un number et une Date
--->
-
----
-
-# Coercition de type
-
-<MacWindow title="Coercition de type disponible" height="fit-content" v-click>
+<div class="flex items-center justify-center mt-8">
+  <MacWindow title="Coercition de type disponible" height="fit-content" v-click>
 
 ```ts
 z.coerce.string();  // String(value)
@@ -35,44 +26,8 @@ z.coerce.date();    // new Date(value)
 z.coerce.boolean(); // Boolean(value)
 ```
 
-</MacWindow>
-
-<div class="flex items-center justify-around pt-8" style="scale: 0.8">
-  <div 
-    class="flex flex-col items-center gap-8"
-    v-click="2"
-    v-motion
-    :initial="{ opacity: 0, scale: 0.5 }"
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-  >
-    <img src="./assets/validation.png" class="h-40" alt="" />
-    <span class="text-2xl font-semibold text-black">Validation</span>
-  </div>
-    <div
-        v-click="3"
-        v-motion
-        :initial="{ opacity: 0, scale: 0.5, rotate: -180 }"
-        :enter="{ opacity: 1, scale: 1, rotate: 0, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-        :leave="{ opacity: 0, scale: 0, rotate: 180, transition: { type: 'spring', stiffness: 300, damping: 20 } }"
-        class="text-9xl"
-    >
-    🤝
-    </div>
-  <div
-    v-click="2"
-    v-motion
-    :initial="{ opacity: 0, scale: 0.5 }"
-    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
-    class="flex flex-col items-center gap-4"
-  >
-    <img src="./assets/transformation.png" class="h-46" alt="" />
-    <span class="text-2xl font-semibold text-black">Transformation</span>
-  </div>
+  </MacWindow>
 </div>
-
-<!--
-Mettre en dessous dans la slide d'avant
--->
 
 ---
 transition: view-transition
