@@ -28,3 +28,9 @@ punctuation: "..."
     <div class="text-xl italic text-[#D45656] mt-3 font-semibold">La dette technique déguisée en magie.</div>
   </div>
 </div>
+
+<!--
+Inclusivité
+
+"C'est typé, et encore si votre projet est en TS"
+-->

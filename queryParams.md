@@ -70,6 +70,10 @@ z.coerce.boolean(); // Boolean(value)
   </div>
 </div>
 
+<!--
+Mettre en dessous dans la slide d'avant
+-->
+
 ---
 transition: view-transition
 ---
@@ -88,8 +92,7 @@ transition: view-transition
 </div>
 
 <!--
-Ici, en utilisant .preprocess() on peut valider un tableau de valeur provenant d'une url
-On montre aussi la possibilité d'ajouter un .nullable() pour envoyer null au back
+Voir si je peux pas faire le preprocess en code
 -->
 
 ---
@@ -123,6 +126,12 @@ console.log(TransformSchema.parse({
 Alors que `.transform` s'effectue après !
 
 </div>
+
+<!--
+Revoir le display en deux fenetre
+
+Revoir design phrase de fin
+-->
 
 ---
 
@@ -158,3 +167,9 @@ type Output = z.output<typeof Schema>; // { page: number, releaseDate: Date, gen
 *Peut s'avérer très utile dans le cas d'un formulaire !*
 
 </v-click>
+
+<!--
+Ajouter twoslash
+
+Voir design phrase de fin (Logo Form)
+-->

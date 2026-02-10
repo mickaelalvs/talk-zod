@@ -49,8 +49,8 @@ transition: view-transition
 </style>
 
 <!--
-L'idée est d'ajouter un .optional() au champs "hasBeenRead", pour pouvoir faire un post sans le donner
-Ensuite, on peut aussi montrer le .default(false) pour mettre une valeur par défaut
+Ajouter label Backend
+Renomer le schéma
 -->
 
 ---
@@ -80,9 +80,23 @@ transition: view-transition
 </style>
 
 <!--
-Ici on montre le .partial(), pour transformer une validation d'un POST en PATCH
--->
+Changer le schéma pour ajouter de la composition
 
+import z from "zod";
+
+export const postRequestSchema = z.object({
+  id: z.uuid(),
+  title: z.string().min(4).max(100),
+  pageCount: z.number().min(1),
+  thumbnail: z.url(),
+  hasBeenRead: z.boolean(),
+});
+
+
+export const requestSchema = postRequestSchema.extend({
+  thumbnail: z.url().nullable() 
+}).partial()
+-->
 
 ---
 transition: view-transition
@@ -108,6 +122,10 @@ z.object().required() // Every field is required
     padding: 1rem
 }
 </style>
+
+<!--
+ENLEVER
+-->
 
 ---
 
@@ -167,3 +185,9 @@ Le schéma deviens la source de vérité ! 🗺️
 Zod nous protège au **Runtime** ET au **BuildTime**
 
 </v-click>
+
+<!--
+TwoSlash avec Highlight
+
++ Ajouter slide ecosystème
+-->

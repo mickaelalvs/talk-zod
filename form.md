@@ -23,6 +23,12 @@ transition: view-transition
 }
 </style>
 
+<!--
+Ajouter les validations HTML
+
+Ajouter le bouton pour remplir le form
+-->
+
 ---
 transition: view-transition
 ---
@@ -56,9 +62,9 @@ transition: view-transition
 </style>
 
 <!--
-On peut ajouter de la validation sur le formulaire
-un z.email() pour le login, un .min() pour le mot de passe
-Et on fini par un refine() pour le mot de passe
+Essayer de voir si je peux faire le refine en code
+
+Ajouter le warning validation après celle du schéma
 -->
 
 ---
@@ -107,3 +113,7 @@ Avec le `.refine()`, l’imagination est votre seul limite !
 </h3>
 
 </v-click>
+
+<!--
+ENLEVER + Ajouter slide librarie de formulaire
+-->

@@ -113,7 +113,7 @@
 </div>
 
 <!--
-Ajouter un "Et bien plus"
+Afficher d'un coup (avec un stagger)
 -->
 
 ---
@@ -249,3 +249,11 @@ Zod s'intègre partout
 </h2>
 
 </v-click>
+
+<!--
+Enlever les partie qu'on a mit dans les slides démo
+
+Ajouter un exemple de zod-to-quelquechose
+
+Enlever la phrase nulle
+-->

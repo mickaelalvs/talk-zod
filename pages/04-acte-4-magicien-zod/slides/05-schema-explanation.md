@@ -111,3 +111,7 @@ const UserSchema = z.object({
 <div v-click="9" class="absolute right-[260px] bottom-[220px] flex flex-col items-start gap-0">
   <span v-mark="{ at: 9, color: '#3168B7', type: 'circle' }" class="text-lg font-bold opacity-0">min(0)</span>
 </div>
+
+<!--
+Replacer l'encerclement de l'email
+-->

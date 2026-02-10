@@ -34,3 +34,7 @@ class: p-0 m-0
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noticia+Text:wght@400;700&display=swap');
 </style>
+
+<!--
+Ajouter QR Code feedback
+-->

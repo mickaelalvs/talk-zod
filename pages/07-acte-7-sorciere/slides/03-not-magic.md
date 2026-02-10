@@ -44,3 +44,7 @@
     </div>
   </div>
 </div>
+
+<!--
+Verifier bundle size avec la v4
+-->

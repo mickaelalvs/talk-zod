@@ -123,6 +123,10 @@ transition: view-transition
 }
 </style>
 
+<!--
+Remplacer par slide recap
+-->
+
 ---
 transition: view-transition
 ---

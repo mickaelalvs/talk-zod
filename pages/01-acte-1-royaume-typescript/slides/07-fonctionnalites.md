@@ -80,4 +80,8 @@ function handle(value: string | number) {
 
 <!--
 Recaler les apparitions le logo
+
+Enlever le trait
+
+Passer en twoslash
 -->
