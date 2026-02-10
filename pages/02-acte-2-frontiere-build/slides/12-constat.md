@@ -15,7 +15,3 @@
 </div>
 
 </div>
-
-<!--
-Rajouter "Et on parle même pas de JS"
--->

@@ -48,8 +48,6 @@
 
 </div>
 
-<v-click>
-<div class="mt-12 text-center text-2xl text-[#2D3748]">
-  Ils sont <strong class="text-[#3168B7]">complémentaires</strong>, pas concurrents.
+<div v-click="3" class="mt-12 text-center text-2xl text-[#2D3748]">
+  Ils sont <span v-mark="{ at: 3, type: 'highlight', color: '#3168B7' }" class="text-white font-bold">complémentaires</span>, pas concurrents.
 </div>
-</v-click>

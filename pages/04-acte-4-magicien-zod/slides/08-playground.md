@@ -4,7 +4,3 @@
     style="width: 100%; height: 100%; zoom: 0.3; border: none;"
   />
 </MacWindow>
-
-<!--
-Ajouter un niveau de zoom
--->

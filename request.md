@@ -121,19 +121,10 @@ const body: PostRequestBody = {...}
 
 </MacWindow>
 
-<v-click>
-<h2 class="pt-10">
-
-Le schéma deviens la source de vérité ! 🗺️
-
-</h2>
-</v-click>
-
-<v-click>
-
-Zod nous protège au **Runtime** ET au **BuildTime**
-
-</v-click>
+<div v-click="4" class="text-center text-3xl font-bold pt-10">
+  <h2>Le schéma devient la <span v-mark="{ at: 4, type: 'highlight', color: '#3168B7' }" class="text-white">source de vérité</span></h2>
+  <p class="text-lg">Zod nous protège au <span v-mark="{ at: 4, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">Runtime</span> ET au <span v-mark="{ at: 4, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">BuildTime</span></p>
+</div>
 
 <!--
 + Ajouter slide ecosystème

@@ -76,7 +76,7 @@ console.log(TransformSchema.parse({
 ```
 
   </MacWindow>
-  <MacWindow class="min-w-70" title="console.log()" v-click>
+  <MacWindow class="min-w-70" title="Console" v-click>
   
 ```ts
 {
@@ -95,23 +95,19 @@ console.log(TransformSchema.parse({
   </MacWindow>
 </div>
 
-<div class="font-semibold text-2xl mt-4" v-click>
-
-<span class="text-4xl inline-block mr-3">⚠️</span> `.preprocess` et `.coerce` s'effectue avant la validation
-
-Alors que `.transform` s'effectue après !
-
+<div class="text-center text-2xl font-bold pt-4" v-click="3">
+  <p><span class="text-3xl inline-block mr-3">⚠️</span> <span v-mark="{ at: 3, type: 'highlight', color: '#3168B7' }" class="text-white">.preprocess</span> et <span v-mark="{ at: 3, type: 'highlight', color: '#3168B7' }" class="text-white">.coerce</span> s'effectuent <span v-mark="{ at: 3, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">avant</span> la validation</p>
+  <p class="text-lg mt-2">Alors que <span v-mark="{ at: 3, type: 'highlight', color: '#3168B7' }" class="text-white">.transform</span> s'effectue <span v-mark="{ at: 3, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">après</span> !</p>
 </div>
 
-<!--
-Revoir design phrase de fin
--->
-
+---
+punctuation: "?"
 ---
 
-# Et l'inférence ?
+# Et l'inférence
 
-<MacWindow title="" height="fit-content">
+<div class="relative mt-20">
+  <MacWindow title="schema.ts" height="fit-content">
 
 ```ts {3-7|9|10|all} twoslash
 import { z } from 'zod';
@@ -126,14 +122,8 @@ type Input = z.input<typeof Schema>;   // { page: unknown, releaseDate: unknown,
 type Output = z.output<typeof Schema>; // { page: number, releaseDate: Date, genre: string[] }
 ```
 
-</MacWindow>
-
-<v-click>
-
-*Peut s'avérer très utile dans le cas d'un formulaire !*
-
-</v-click>
-
-<!--
-Voir design phrase de fin (Logo Form)
--->
+  </MacWindow>
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0.5, y: 20 }" :enter="{ opacity: 1, scale: 1.3, y: 0, transition: { type: 'spring', stiffness: 300, damping: 15 } }" class="absolute -bottom-10 -right-4 flex flex-col items-center gap-2">
+    <img src="/assets/images/icon-forms.png" class="h-16" />
+  </div>
+</div>

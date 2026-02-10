@@ -92,7 +92,3 @@ transition: fade-out
     </template>
   </v-switch>
 </div>
-
-<!--
-Zoom
--->

@@ -116,27 +116,19 @@
 
 # L'écosystème Zod
 
-<div class="flex gap-22">
-  <div class="flex-1">
-    <div 
-      class="text-xl font-semibold mb-6 text-gray-700"
-      v-motion
-      v-click
-      :initial="{ opacity: 0, y: 10 }" 
-      :enter="{ opacity: 1, y: 0 }"
-      :duration="400"
-    >
+<div class="flex gap-22 pt-15">
+  <div 
+    class="flex-1"
+    v-click="1"
+    v-motion
+    :initial="{ opacity: 0, x: -30 }" 
+    :enter="{ opacity: 1, x: 0, transition: { type: 'spring', stiffness: 300, damping: 20 } }"
+  >
+    <div class="text-xl font-semibold mb-6 text-gray-700">
       Permet de générer ... :
     </div>
     <div class="flex flex-col gap-4">
-      <div 
-        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-        v-motion
-        v-click
-        :initial="{ opacity: 0, x: 20 }" 
-        :enter="{ opacity: 1, x: 0 }"
-        :duration="500"
-        >
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
         <div class="font-semibold text-lg mb-1" style="color: var(--oz-zod-blue);">
             zod-to-openapi
         </div>
@@ -144,14 +136,7 @@
             générer des specs OpenAPI
         </div>
       </div>
-      <div 
-        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-        v-motion
-        v-click
-        :initial="{ opacity: 0, x: 20 }" 
-        :enter="{ opacity: 1, x: 0 }"
-        :duration="500"
-        >
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
         <div class="font-semibold text-lg mb-1" style="color: var(--oz-zod-blue);">
             nestjs-graphql-zod
         </div>
@@ -161,26 +146,18 @@
       </div>
     </div>
   </div>
-  <div class="flex-1">
-    <div 
-      class="text-xl font-semibold mb-6 text-gray-700"
-      v-motion
-      v-click
-      :initial="{ opacity: 0, y: 10 }" 
-      :enter="{ opacity: 1, y: 0 }"
-      :duration="400"
-    >
+  <div 
+    class="flex-1"
+    v-click="2"
+    v-motion
+    :initial="{ opacity: 0, x: 30 }" 
+    :enter="{ opacity: 1, x: 0, transition: { type: 'spring', stiffness: 300, damping: 20 } }"
+  >
+    <div class="text-xl font-semibold mb-6 text-gray-700">
       Et peut être généré par ... :
     </div>
     <div class="flex flex-col gap-4">
-      <div 
-        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-        v-motion
-        v-click
-        :initial="{ opacity: 0, x: 20 }" 
-        :enter="{ opacity: 1, x: 0 }"
-        :duration="500"
-        >
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
         <div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
             openapi-zod-client
         </div>
@@ -188,14 +165,7 @@
             générer un client typé depuis OpenAPI
         </div>
       </div>
-      <div 
-        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-        v-motion
-        v-click
-        :initial="{ opacity: 0, x: 20 }" 
-        :enter="{ opacity: 1, x: 0 }"
-        :duration="500"
-        >
+      <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
         <div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
             zod-prisma
         </div>

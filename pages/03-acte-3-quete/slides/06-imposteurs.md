@@ -4,9 +4,10 @@ punctuation: "..."
 
 # Les imposteurs du runtime
 
-<div class="grid grid-cols-2 gap-6 mt-12">
-  <div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="bg-[#F5F5F5] border-l-4 border-[#2D3748] px-6 py-4 rounded-r-lg">
+<div class="grid grid-cols-2 gap-10 mt-12">
+  <div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="relative bg-[#F5F5F5] border-l-4 border-[#2D3748] px-6 py-4 rounded-r-lg">
     <span class="text-xl italic text-[#2D3748]">"C'est typé"</span>
+    <span class="absolute -bottom-5 left-2 text-xs text-gray-400">Sauf pour les devs JS...</span>
   </div>
   <div v-click v-motion :initial="{ opacity: 0, scale: 0.8 }" :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 400, damping: 15 } }" class="bg-[#F5F5F5] border-l-4 border-[#2D3748] px-6 py-4 rounded-r-lg">
     <span class="text-xl italic text-[#2D3748]">"C'est validé en HTML"</span>
