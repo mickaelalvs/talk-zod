@@ -27,7 +27,7 @@ const props = withDefaults(defineProps<Props>(), {
 <style scoped>
 .mac-window {
   border-radius: 6px;
-  overflow: hidden;
+  overflow: visible;
   background: #F5F5F5;
   border: 1px solid #ddd;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
@@ -72,6 +72,7 @@ const props = withDefaults(defineProps<Props>(), {
 .mac-content {
   background: #F5F5F5;
   overflow: visible;
+  border-radius: 0 0 6px 6px;
 }
 
 .mac-content :deep(.slidev-monaco-container),
