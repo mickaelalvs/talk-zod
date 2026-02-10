@@ -1,8 +1,9 @@
 ---
 clicks: 2
+punctuation: "..."
 ---
 
-# Tout a changé...
+# Tout a changé
 
 <MacWindow title="project/" height="380px">
   <div class="flex overflow-hidden" style="margin-left: 0px;">
