@@ -16,9 +16,9 @@ transition: fade-out
 }
 
 .path-img-7 {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain;
   pointer-events: none;
   animation: moveUp7 30s linear forwards;
 }
