@@ -54,15 +54,18 @@ Voir si je peux pas faire le preprocess en code
 
 # Transformation et pre-processing
 
-<MacWindow title="Transform" class="-mt-6" height="fit-content">
 
-```ts {monaco-run} {showOutputAt: ['+1', '+1']}
-import z from 'zod'
+<div class="flex gap-4 justify-between">
+  <MacWindow title="Transform" class="flex-1" height="fit-content" v-click>
 
+```ts
 const TransformSchema = z.object({
     genre: z.string().transform(value => value.split(',')),
     pageCount: z.coerce.number(),
-    keywords: z.preprocess((value: string) => value.split(',') , z.array(z.string()))
+    keywords: z.preprocess(
+      (value: string) => value.split(','), 
+      z.array(z.string())
+    )
 })
 
 console.log(TransformSchema.parse({
@@ -72,9 +75,27 @@ console.log(TransformSchema.parse({
 }));
 ```
 
-</MacWindow>
+  </MacWindow>
+  <MacWindow class="min-w-70" title="console.log()" v-click>
+  
+```ts
+{
+  "genre": [
+    "fantasy",
+    "horror"
+  ],
+  "pageCount": 180,
+  "keywords": [
+    "book",
+    "novel"
+  ]
+}
+```
 
-<div class="font-semibold text-2xl mt-4" v-click="2">
+  </MacWindow>
+</div>
+
+<div class="font-semibold text-2xl mt-4" v-click>
 
 <span class="text-4xl inline-block mr-3">⚠️</span> `.preprocess` et `.coerce` s'effectue avant la validation
 
@@ -83,8 +104,6 @@ Alors que `.transform` s'effectue après !
 </div>
 
 <!--
-Revoir le display en deux fenetre
-
 Revoir design phrase de fin
 -->
 
