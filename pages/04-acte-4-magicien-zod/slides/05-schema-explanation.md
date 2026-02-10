@@ -26,7 +26,7 @@ type User = {
 
 <div class="text-lg font-semibold text-[#3168B7] mb-2">Le schéma Zod</div>
 
-<MacWindow title="schema.ts" height="auto">
+<MacWindow title="Schema.ts" height="auto">
 
 ````md magic-move
 ```ts

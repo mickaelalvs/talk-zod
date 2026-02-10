@@ -106,7 +106,7 @@ transition: view-transition
 
 <div class="flex justify-center items-stretch gap-8">
 <div class="form-window-container">
-<MacWindow title="formulaire" height="fit-content">
+<MacWindow title="Formulaire" height="fit-content">
     <RealForm />
 </MacWindow>
 </div>
@@ -135,12 +135,12 @@ transition: view-transition
 
 <div class="flex justify-center items-stretch gap-8">
 <div class="form-window-container">
-<MacWindow title="formulaire" height="fit-content">
+<MacWindow title="Formulaire" height="fit-content">
     <RealForm />
 </MacWindow>
 </div>
 <div class='w-1/2 z-0'>
-<MacWindow title="schema" height="fit-content">
+<MacWindow title="Schema" height="fit-content">
 <div style="max-height: 380px; overflow-y: scroll">
 
 <<< ../../components/forms/real-schema.ts

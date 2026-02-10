@@ -6,7 +6,7 @@ transition: view-transition
 
 <div class="flex justify-center items-stretch gap-8">
 <div class="form-window-container">
-<MacWindow title="formulaire" height="fit-content">
+<MacWindow title="Formulaire" height="fit-content">
     <PasswordForm />
 </MacWindow>
 </div>
@@ -37,12 +37,12 @@ transition: view-transition
 
 <div class="flex justify-center items-stretch gap-8">
 <div class="form-window-container">
-<MacWindow title="formulaire" height="fit-content">
+<MacWindow title="Formulaire" height="fit-content">
     <PasswordForm />
 </MacWindow>
 </div>
 <div class='w-1/2 z-0'>
-<MacWindow title="schema" height="fit-content">
+<MacWindow title="Schema" height="fit-content">
 
 <<< ./components/forms/password-schema.ts {monaco-write} {height: 'auto'}
 
