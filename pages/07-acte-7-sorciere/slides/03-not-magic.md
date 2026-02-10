@@ -26,7 +26,7 @@
     <img src="../assets/bundle-size.png" class="h-28" />
     <div class="text-center">
       <div class="text-lg font-semibold text-[#3168B7] mb-1">Bundle Size</div>
-      <span class="text-sm text-[#2D3748]">~50kb minifié</span>
+      <span class="text-sm text-[#2D3748]">~17kb minifié + gzippé</span>
     </div>
   </div>
 
@@ -44,7 +44,3 @@
     </div>
   </div>
 </div>
-
-<!--
-Verifier bundle size avec la v4
--->
