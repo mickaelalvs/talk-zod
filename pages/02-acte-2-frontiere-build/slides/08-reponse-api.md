@@ -77,9 +77,5 @@ user.name.toUpperCase()
   :initial="{ opacity: 0, y: 20 }"
   :enter="{ opacity: 1, y: 0, transition: { type: 'spring', stiffness: 300, damping: 20 } }"
   class="mt-4 w-full flex justify-center">
-  <span class="text-2xl font-bold px-5 py-3">Pourtant avant on était sûr, TypeScript a rien dit...</span>
+  <span class="text-2xl font-bold px-5 py-3">Pourtant avant on était sûr, TypeScript n'a rien dit...</span>
 </div>
-
-<!--
-"Typescript n'a rien dit"
--->

@@ -75,7 +75,3 @@ function handle(value: string | number) {
 </div>
 
 </div>
-
-<!--
-Passer en twoslash
--->
