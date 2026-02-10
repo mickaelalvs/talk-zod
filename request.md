@@ -94,7 +94,7 @@ export const requestSchema = postRequestSchema.extend({
 -->
 
 ---
-transition: view-transition
+transition: fade
 ---
 
 # Inférence automatique
@@ -102,41 +102,22 @@ transition: view-transition
 
 <MacWindow title="Inférence de type" height="fit-content">
 
-````md magic-move
-```ts
+```ts {1-7|11|9}{lines:true} twoslash
+// @noErrors
+import { z } from 'zod'
+// ---cut---
 export const PostRequestBodySchema = z.object({
-  id: z.uuid(),
+  id: z.string().uuid(),
   title: z.string().min(4).max(100),
   pageCount: z.number().min(1),
-  thumbnail: z.url(),
-  hasBeenRead: z.boolean(),
-})
-```
-```ts
-export const PostRequestBodySchema = z.object({
-  id: z.uuid(),
-  title: z.string().min(4).max(100),
-  pageCount: z.number().min(1),
-  thumbnail: z.url(),
+  thumbnail: z.string().url(),
   hasBeenRead: z.boolean(),
 })
 
-const body: [???] = {...}
-```
-```ts
-export const PostRequestBodySchema = z.object({
-  id: z.uuid(),
-  title: z.string().min(4).max(100),
-  pageCount: z.number().min(1),
-  thumbnail: z.url(),
-  hasBeenRead: z.boolean(),
-})
-
-type PostRequestBody = z.infer<typeof PostRequestBodySchema>;
+type PostRequestBody = z.infer<typeof PostRequestBodySchema>
 
 const body: PostRequestBody = {...}
 ```
-````
 
 </MacWindow>
 
@@ -155,7 +136,5 @@ Zod nous protège au **Runtime** ET au **BuildTime**
 </v-click>
 
 <!--
-TwoSlash avec Highlight
-
 + Ajouter slide ecosystème
 -->
