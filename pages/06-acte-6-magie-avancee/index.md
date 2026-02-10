@@ -116,7 +116,7 @@
 
 # L'écosystème Zod
 
-<div class="flex gap-8">
+<div class="flex gap-22">
   <div class="flex-1">
     <div 
       class="text-xl font-semibold mb-6 text-gray-700"
@@ -126,52 +126,41 @@
       :enter="{ opacity: 1, y: 0 }"
       :duration="400"
     >
-      Zod s'intègre dans :
+      Permet de générer ... :
     </div>
     <div class="flex flex-col gap-4">
-        <div 
+      <div 
         class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
         v-motion
         v-click
-        :initial="{ opacity: 0, x: -20 }" 
+        :initial="{ opacity: 0, x: 20 }" 
         :enter="{ opacity: 1, x: 0 }"
         :duration="500"
         >
-        <div class="font-semibold text-lg" style="color: var(--oz-zod-blue);">
-            react-hook-form
+        <div class="font-semibold text-lg mb-1" style="color: var(--oz-zod-blue);">
+            zod-to-openapi
         </div>
-        <div class="font-semibold text-lg mt-1" style="color: var(--oz-zod-blue);">
-            @tanstack/react-form
+        <div class="text-sm text-gray-600">
+            générer des specs OpenAPI
         </div>
-        <div class="text-sm text-gray-600 mt-1">
-            Validation de formulaires
+      </div>
+      <div 
+        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
+        v-motion
+        v-click
+        :initial="{ opacity: 0, x: 20 }" 
+        :enter="{ opacity: 1, x: 0 }"
+        :duration="500"
+        >
+        <div class="font-semibold text-lg mb-1" style="color: var(--oz-zod-blue);">
+            nestjs-graphql-zod
         </div>
+        <div class="text-sm text-gray-600">
+            générer des requêtes GraphQL
+        </div>
+      </div>
     </div>
-
-<div 
-class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-v-motion
-v-click
-:initial="{ opacity: 0, x: -20 }" 
-:enter="{ opacity: 1, x: 0 }"
-:duration="500"
->
-<div class="font-semibold text-lg" style="color: var(--oz-zod-blue);">
-    tRPC
-</div>
-<div class="font-semibold text-lg" style="color: var(--oz-zod-blue);">
-    nestjs-zod
-</div>
-<div class="font-semibold text-lg mt-1" style="color: var(--oz-zod-blue);">
-    express-zod-api
-</div>
-       <div class="text-sm text-gray-600 mt-1">
-            Validation de requêtes
-        </div>
-</div>
-</div>
   </div>
-
   <div class="flex-1">
     <div 
       class="text-xl font-semibold mb-6 text-gray-700"
@@ -181,75 +170,39 @@ v-click
       :enter="{ opacity: 1, y: 0 }"
       :duration="400"
     >
-      Et est dans les fondations de :
+      Et peut être généré par ... :
     </div>
-
-<div class="flex flex-col gap-4">
-    <div 
-    class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-    v-motion
-    v-click
-    :initial="{ opacity: 0, x: 20 }" 
-    :enter="{ opacity: 1, x: 0 }"
-    :duration="500"
-    >
-    <div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
-        zod-to-openapi
+    <div class="flex flex-col gap-4">
+      <div 
+        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
+        v-motion
+        v-click
+        :initial="{ opacity: 0, x: 20 }" 
+        :enter="{ opacity: 1, x: 0 }"
+        :duration="500"
+        >
+        <div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
+            openapi-zod-client
+        </div>
+        <div class="text-sm text-gray-600">
+            générer un client typé depuis OpenAPI
+        </div>
+      </div>
+      <div 
+        class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
+        v-motion
+        v-click
+        :initial="{ opacity: 0, x: 20 }" 
+        :enter="{ opacity: 1, x: 0 }"
+        :duration="500"
+        >
+        <div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
+            zod-prisma
+        </div>
+        <div class="text-sm text-gray-600">
+            générer des schémas depuis Prisma
+        </div>
+      </div>
     </div>
-    <div class="text-sm text-gray-600">
-        générer des specs OpenAPI
-    </div>
-    </div>
-
-<div 
-class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-v-motion
-v-click
-:initial="{ opacity: 0, x: 20 }" 
-:enter="{ opacity: 1, x: 0 }"
-:duration="500"
->
-<div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
-    openapi-zod-client
-</div>
-<div class="text-sm text-gray-600">
-    générer un client typé depuis OpenAPI
-</div>
-</div>
-
-<div 
-class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50"
-v-motion
-v-click
-:initial="{ opacity: 0, x: 20 }" 
-:enter="{ opacity: 1, x: 0 }"
-:duration="500"
->
-<div class="font-semibold text-lg mb-1" style="color: var(--oz-emerald);">
-    zod-prisma
-</div>
-<div class="text-sm text-gray-600">
-    générer des schémas depuis Prisma
-</div>
-</div>
-</div>
   </div>
 </div>
-
-<v-click>
-
-<h2 class="text-center mt-8">
-
-Zod s'intègre partout
-
-</h2>
-
-</v-click>
-
-<!--
-Enlever les partie qu'on a mit dans les slides démo
-
-Ajouter un exemple de zod-to-quelquechose
-
-Enlever la phrase nulle
--->
