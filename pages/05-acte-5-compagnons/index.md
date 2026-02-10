@@ -78,7 +78,7 @@ transition: fade-out
     </template>
     <template #4>
       <div class="subtitle-box">
-        Nos héros vont affronter les <strong>épreuves du quotidien</strong>.
+        Nous allons affronter les <strong>épreuves du quotidien</strong>.
       </div>
     </template>
     <template #5>

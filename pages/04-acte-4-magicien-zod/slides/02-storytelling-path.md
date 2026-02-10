@@ -72,7 +72,7 @@ transition: fade-out
     </template>
     <template #2>
       <div class="subtitle-box">
-        Nos héros arrivent devant les portes de la <strong>Cité d'Émeraude</strong>.
+        Nous arrivons devant les portes de la <strong>Cité d'Émeraude</strong>.
       </div>
     </template>
     <template #3>

@@ -67,7 +67,7 @@ transition: fade-out
     </template>
     <template #3>
       <div class="sub-acte2">
-        Elle emporta nos héros au-delà des frontières connues...
+        Elle nous emporta au-delà des frontières connues...
       </div>
     </template>
     <template #4>

@@ -23,14 +23,8 @@ punctuation: "..."
   <img src="../assets/arrow.svg" class="h-36" />
   <div class="px-6 py-4 rounded-r-lg">
     <div class="mt-3 text-xl text-[#2D3748] font-semibold">
-      Ils rassurent le développeur. <span class="font-black">Pas l'application.</span>
+      Ils rassurent la personne qui écrit le code. <span class="font-black">Pas l'application.</span>
     </div>
     <div class="text-xl italic text-[#D45656] mt-3 font-semibold">La dette technique déguisée en magie.</div>
   </div>
 </div>
-
-<!--
-Inclusivité
-
-"C'est typé, et encore si votre projet est en TS"
--->

@@ -82,7 +82,7 @@ transition: fade-out
     </template>
     <template #5>
       <div class="subtitle-box">
-        C'est des magiciens qui <strong>protègent le runtime</strong> et relient les deux mondes...
+        Ce sont des outils magiques qui <strong>protègent le runtime</strong> et relient les deux mondes...
       </div>
     </template>
   </v-switch>

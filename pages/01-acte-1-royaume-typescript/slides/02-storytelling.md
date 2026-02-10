@@ -62,7 +62,7 @@ transition: fade-out
     </template>
     <template #2>
       <div class="subtitle-box-1">
-        Les développeurs y vivaient heureux, protégés par une <strong>magie ancienne</strong>.
+        Les développeurs et développeuses y vivaient heureux, protégés par une <strong>magie ancienne</strong>.
       </div>
     </template>
     <template #3>
@@ -82,7 +82,3 @@ transition: fade-out
     </template>
   </v-switch>
 </div>
-
-<!--
-Inclusivité : Revoir storytelling
--->

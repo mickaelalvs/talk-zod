@@ -71,7 +71,7 @@ transition: fade-out
     </template>
     <template #2>
       <div class="subtitle-box">
-        Nos héros réalisent qu'ils ont besoin d'aide.
+        On réalise qu'on a besoin d'aide.
       </div>
     </template>
     <template #3>
