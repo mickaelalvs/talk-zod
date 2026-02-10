@@ -1,5 +1,3 @@
---- 
-
 # Fonctionnalités avancées
 
 <div class="flex gap-8 h-full items-start">
@@ -35,7 +33,7 @@ function handle(value: string | number) {
 
 <div class="flex-1 grid grid-cols-2 gap-6 text-center content-center">
   <div
-    v-click="3"
+    v-click="2"
     v-motion
     :initial="{ opacity: 0, scale: 0.5 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
@@ -45,7 +43,7 @@ function handle(value: string | number) {
     <span class="text-base font-semibold text-black">Inférence<br/>intelligente</span>
   </div>
   <div
-    v-click="4"
+    v-click="3"
     v-motion
     :initial="{ opacity: 0, scale: 0.5 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
@@ -55,7 +53,7 @@ function handle(value: string | number) {
     <span class="text-base font-semibold text-black">Génériques<br/>& utilitaires</span>
   </div>
   <div
-    v-click="5"
+    v-click="4"
     v-motion
     :initial="{ opacity: 0, scale: 0.5 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
@@ -65,7 +63,7 @@ function handle(value: string | number) {
     <span class="text-base font-semibold text-black">Union &<br/>intersection</span>
   </div>
   <div
-    v-click="6"
+    v-click="5"
     v-motion
     :initial="{ opacity: 0, scale: 0.5 }"
     :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
@@ -79,9 +77,5 @@ function handle(value: string | number) {
 </div>
 
 <!--
-Recaler les apparitions le logo
-
-Enlever le trait
-
 Passer en twoslash
 -->
