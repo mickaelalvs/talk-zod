@@ -102,33 +102,6 @@ export const requestSchema = postRequestSchema.extend({
 transition: view-transition
 ---
 
-# Request
-
-<MacWindow title="Optionalité">
-    <span class="pl-4 pt-2 block text-sm font-semibold">Zod nous fournis plusieurs outils pour gérer l'optionalité de nos schéma</span>
-
-```ts
-z.string().optional() // undefined
-z.string().nullabel() // null
-z.string().nullish()  // null || undefined
-
-z.object().partial()  // Every field is optional
-z.object().required() // Every field is required
-```
-</MacWindow>
-
-<style>
-.mac-content {
-    padding: 1rem
-}
-</style>
-
-<!--
-ENLEVER
--->
-
----
-
 # Inférence automatique
 
 
