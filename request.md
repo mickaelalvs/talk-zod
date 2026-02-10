@@ -32,7 +32,7 @@ transition: view-transition
     <div class="request-window-container">
         <Request />
     </div>
-    <MacWindow title="request schema" style="min-width: 400px">
+    <MacWindow title="Request schema" label="Backend" style="min-width: 400px">
 <<< ./components/requests/request-schema.ts {monaco-write} {height: 'auto'}
     </MacWindow>
 </div>
@@ -48,11 +48,6 @@ transition: view-transition
 }
 </style>
 
-<!--
-Ajouter label Backend
-Renomer le schéma
--->
-
 ---
 transition: view-transition
 ---
@@ -63,7 +58,7 @@ transition: view-transition
     <div class="request-window-container">
         <Request method="PATCH" />
     </div>
-    <MacWindow title="request schema" style="min-width: 400px">
+    <MacWindow title="Request schema" label="Backend" style="min-width: 400px">
 <<< ./components/requests/request-schema.ts {monaco-write} {height: 'auto'}
     </MacWindow>
 </div>

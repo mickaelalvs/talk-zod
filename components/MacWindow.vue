@@ -2,11 +2,13 @@
 interface Props {
   title?: string
   height?: string
+  label?: string
 }
 
 const props = withDefaults(defineProps<Props>(), {
   title: 'code.ts',
-  height: '170px'
+  height: '170px',
+  label: ''
 })
 </script>
 
@@ -17,6 +19,7 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="mac-btn mac-minimize"></span>
       <span class="mac-btn mac-maximize"></span>
       <span class="mac-title">{{ props.title }}</span>
+      <span v-if="props.label" class="mac-label">{{ props.label }}</span>
     </div>
     <div class="mac-content" :style="{ height: props.height }">
       <slot />
@@ -66,6 +69,17 @@ const props = withDefaults(defineProps<Props>(), {
   color: #666;
   font-size: 11px;
   font-weight: 600;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  flex: 1;
+}
+
+.mac-label {
+  font-size: 9px;
+  color: #888;
+  background: #e0e0e0;
+  border: 1px solid #ccc;
+  padding: 1px 6px;
+  border-radius: 3px;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
