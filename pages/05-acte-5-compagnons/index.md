@@ -99,64 +99,104 @@ src: ../../request.md
 src: ../../queryParams.md
 ---
 ---
-transition: view-transition
----
 
-# Cas Réel
+# Récap
 
-<div class="flex justify-center items-stretch gap-8">
-<div class="form-window-container">
-<MacWindow title="Formulaire" height="fit-content">
-    <RealForm />
-</MacWindow>
+<div class="relative h-[400px] mt-8">
+  <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
+    style="top: 3%; left: 8%; transform: rotate(-6deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+      refine
+    </div>
+    <div class="text-sm text-gray-700">
+      Validation plus poussée
+    </div>
+  </div>
+    <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
+    style="top: -5%; right: 32%; transform: rotate(14deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 200 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+      coerce / preprocess
+    </div>
+    <div class="text-sm text-gray-700">
+      Transformation avant la validation
+    </div>
+  </div>
+  <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
+    style="top: 28%; right: 2%; transform: rotate(-11deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 400 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+      optional() / nullable()
+    </div>
+    <div class="text-sm text-gray-700">
+      Optionalité pour un champs
+    </div>
+  </div>
+  <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50"
+    style="bottom: 38%; left: 15%; transform: rotate(8deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 600 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+        partial() / required()
+    </div>
+    <div class="text-sm text-gray-700">
+      Optionalité au niveau du schéma
+    </div>
+  </div>
+  <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
+    style="bottom: 5%; right: 12%; transform: rotate(-3deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 800 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+    z.literal()
+    </div>
+    <div class="text-sm text-gray-700">
+      Validation précise
+    </div>
+  </div>
+    <div 
+    class="absolute bg-white/60 backdrop-blur-sm rounded-lg p-4 shadow-lg border border-gray-200/50 w-56"
+    style="bottom: 2%; left: 6%; transform: rotate(-13deg);"
+    v-motion
+    v-click="1"
+    :initial="{ opacity: 0, scale: 0.5 }" 
+    :enter="{ opacity: 1, scale: 1, transition: { type: 'spring', stiffness: 300, damping: 15, delay: 1000 } }"
+    :duration="500"
+  >
+    <div class="font-semibold text-base mb-1" style="color: var(--oz-emerald);">
+      z.input / z.output
+    </div>
+    <div class="text-sm text-gray-700">
+      Inférence de type gratuite
+    </div>
+  </div>
 </div>
-</div>
-
-<style>
-.form-window-container {
-  view-transition-name: animated-form;
-}
-
-::view-transition-old(animated-form),
-::view-transition-new(animated-form) {
-  animation: none;
-}
-</style>
-
-<!--
-Remplacer par slide recap
--->
-
----
-transition: view-transition
----
-
-# Cas Réel
-
-<div class="flex justify-center items-stretch gap-8">
-<div class="form-window-container">
-<MacWindow title="Formulaire" height="fit-content">
-    <RealForm />
-</MacWindow>
-</div>
-<div class='w-1/2 z-0'>
-<MacWindow title="Schema" height="fit-content">
-<div style="max-height: 380px; overflow-y: scroll">
-
-<<< ../../components/forms/real-schema.ts
-
-</div>
-</MacWindow>
-</div>
-</div>
-
-<style>
-.form-window-container {
-  view-transition-name: animated-form;
-}
-
-::view-transition-old(animated-form),
-::view-transition-new(animated-form) {
-  animation: none;
-}
-</style>

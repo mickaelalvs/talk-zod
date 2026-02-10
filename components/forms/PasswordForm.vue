@@ -4,6 +4,13 @@ import { z } from 'zod'
 import { passwordFormSchema } from './password-schema'
 import type { PasswordFormData } from './password-schema.types'
 
+// Sample data - update this object to change the prefilled values
+const sampleData: PasswordFormData = {
+  login: 'user@example.com',
+  password: 'SecurePassword123',
+  passwordConfirmation: 'SecurePassword123',
+}
+
 const formData = reactive<PasswordFormData>({
   login: '',
   password: '',
@@ -48,6 +55,18 @@ const validateForm = () => {
   return true
 }
 
+const fillFormWithSampleData = () => {
+  formData.login = sampleData.login
+  formData.password = sampleData.password
+  formData.passwordConfirmation = sampleData.passwordConfirmation
+  
+  // Clear any existing errors
+  Object.keys(errors).forEach((key) => delete errors[key as keyof PasswordFormData])
+  
+  // Validate the filled form
+  validateForm()
+}
+
 const handleSubmit = (e: Event) => {
   e.preventDefault()
   
@@ -69,6 +88,14 @@ const handleSubmit = (e: Event) => {
 <template>
   <div class="form-container">
     <form @submit="handleSubmit" class="password-form">
+      <button 
+        type="button" 
+        @click="fillFormWithSampleData" 
+        class="fill-button"
+        title="Fill with sample data"
+      >
+        ✨
+      </button>
       <div v-if="showConfetti" class="confetti-container">
         <div
           v-for="i in 200"
@@ -90,7 +117,8 @@ const handleSubmit = (e: Event) => {
       <input
         id="login"
         v-model="formData.login"
-        type="text"
+        type="email"
+        required
         @blur="validateField('login')"
         :class="{ error: errors.login }"
       />
@@ -103,6 +131,8 @@ const handleSubmit = (e: Event) => {
         id="password"
         v-model="formData.password"
         type="password"
+        required
+        minlength="12"
         @blur="validateField('password')"
         :class="{ error: errors.password }"
       />
@@ -115,6 +145,8 @@ const handleSubmit = (e: Event) => {
         id="passwordConfirmation"
         v-model="formData.passwordConfirmation"
         type="password"
+        required
+        minlength="12"
         @blur="validateForm"
         :class="{ error: errors.passwordConfirmation }"
       />
@@ -181,6 +213,32 @@ const handleSubmit = (e: Event) => {
   max-height: 370px;
   overflow-y: auto;
   overflow-x: hidden;
+}
+
+.fill-button {
+  position: absolute;
+  top: 0rem;
+  right: 0.75rem;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  opacity: 0.5;
+  color: white;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background-color 0.2s, transform 0.2s;
+  padding: 0;
+  line-height: 1;
+}
+
+.fill-button:hover {
+  background-color: #5a6268;
+  transform: scale(1.1);
 }
 
 .form-group {

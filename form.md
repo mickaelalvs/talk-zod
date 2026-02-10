@@ -23,12 +23,6 @@ transition: view-transition
 }
 </style>
 
-<!--
-Ajouter les validations HTML
-
-Ajouter le bouton pour remplir le form
--->
-
 ---
 transition: view-transition
 ---
@@ -69,51 +63,8 @@ Ajouter le warning validation après celle du schéma
 
 ---
 
-# Sort de validation avancée
-Quand le schéma ne suffit plus
-
-Si l'API native de Zod ne suffit plus, `.refine()` est la pour vous
-
-<MacWindow title="Refinement" height="fit-content">
-````md magic-move
-```ts
-const PasswordSchema = z.object({
-    password: z.string().min(12),
-    passwordConfirmation: z.string().min(12)
-});
-```
-```ts
-const PasswordSchema = z.object({
-    password: z.string().min(12),
-    passwordConfirmation: z.string().min(12)
-}).refine(data => data.password === data.passwordConfirmation, {
-    message: "Les mots de passe ne correspondent pas",
-    path: ["passwordConfirmation"]
-})
-```
-````
-</MacWindow>
-
-<v-click>
-
-<h3 class="pt-4">
-
-Avec le `.refine()`, l’imagination est votre seul limite !
-
-</h3>
-
-</v-click>
-
-<v-click>
-
-<h3 class="pt-4">
-
-⚠️ Cette validation s'effectue après celle du schéma
-
-</h3>
-
-</v-click>
+# Un écosystème adapté
 
 <!--
-ENLEVER + Ajouter slide librarie de formulaire
+Ajouter slide librarie de formulaire
 -->

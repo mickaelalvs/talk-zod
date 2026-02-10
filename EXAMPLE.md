@@ -86,8 +86,6 @@ function sellWool(animal: Sheep) {
 }
 ```
 
-<!-- Trouver un exemple pour le refine, peut être male / femelle -->
-
 ### Transformation de donnée
 
 Exemple dans un formulaire, on transforme le résultat de certain input pour coller à ce que demande l'API

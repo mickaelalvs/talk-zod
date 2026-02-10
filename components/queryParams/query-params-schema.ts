@@ -1,6 +1,6 @@
 import z from "zod";
 
 export const queryParamsSchema = z.object({
-  page: z.coerce.number(),
-  releaseDate: z.coerce.date(),
+  page: z.string(),
+  releaseDate: z.string(),
 })
