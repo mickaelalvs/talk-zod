@@ -1,5 +1,5 @@
 ---
-transition: view-transition
+transition: fade
 ---
 
 # Query Params
@@ -8,7 +8,7 @@ transition: view-transition
 <EditableMacWindow title="http://books.com/books?page=4&releaseDate=02/13/2026" />
 <div>
 
-<MacWindow title="query params schema">
+<MacWindow title="Query params schema">
 <<< ./components/queryParams/query-params-schema.ts {monaco-write} {height: 'auto'}
 </MacWindow>
 
@@ -16,7 +16,7 @@ transition: view-transition
 </div>
 
 <div class="flex items-center justify-center mt-8">
-  <MacWindow title="Coercition de type disponible" height="fit-content" v-click>
+  <MacWindow title="Coercition de type disponible" height="fit-content" style="min-width: 400px" v-click>
 
 ```ts
 z.coerce.string();  // String(value)
@@ -30,7 +30,7 @@ z.coerce.boolean(); // Boolean(value)
 </div>
 
 ---
-transition: view-transition
+transition: fade
 ---
 
 # Query Params
@@ -39,7 +39,7 @@ transition: view-transition
 <EditableMacWindow title="http://books.com/books?genres=romance,poetry,essays" schema="filters" />
 <div>
 
-<MacWindow title="query params schema">
+<MacWindow title="Query params schema">
 <<< ./components/queryParams/query-params-filter-schema.ts {monaco-write} {height: 'auto'}
 </MacWindow>
 

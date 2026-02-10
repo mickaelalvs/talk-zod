@@ -37,30 +37,30 @@ const parsedResult = computed(() => {
   try {
     const url = new URL(editedTitle.value)
     const params: Record<string, string> = {}
-    
+
     url.searchParams.forEach((value, key) => {
       params[key] = value
     })
-    
+
     const result = props.schema === 'base' ? queryParamsSchema.parse(params) : queryParamsFilterSchema.parse(params)
     return { success: true, data: result, error: null, errorDetails: null }
   } catch (error: any) {
     let errorMessage = 'Invalid URL or query parameters'
     let errorDetails: Array<{ field?: string; message: string }> = []
-    
+
     if (error.issues && Array.isArray(error.issues)) {
       // Zod validation error
       errorDetails = error.issues.map((issue: any) => ({
         field: issue.path?.join('.') || undefined,
         message: issue.message
       }))
-      errorMessage = errorDetails.length === 1 
+      errorMessage = errorDetails.length === 1
         ? errorDetails[0].message
         : `${errorDetails.length} validation error${errorDetails.length > 1 ? 's' : ''}`
     } else if (error.message) {
       errorMessage = error.message
     }
-    
+
     return { success: false, data: null, error: errorMessage, errorDetails }
   }
 })
@@ -95,19 +95,10 @@ watch(jsonString, async (json) => {
       <span class="mac-btn mac-close"></span>
       <span class="mac-btn mac-minimize"></span>
       <span class="mac-btn mac-maximize"></span>
-      <input
-        ref="titleInput"
-        v-model="editedTitle"
-        class="mac-title"
-        @keydown="handleKeydown"
-      />
+      <input ref="titleInput" v-model="editedTitle" class="mac-title" @keydown="handleKeydown" />
       <div class="status-indicator">
-        <svg v-if="parsedResult.success" class="status-icon status-success" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M16.7071 5.29289C17.0976 5.68342 17.0976 6.31658 16.7071 6.70711L8.70711 14.7071C8.31658 15.0976 7.68342 15.0976 7.29289 14.7071L3.29289 10.7071C2.90237 10.3166 2.90237 9.68342 3.29289 9.29289C3.68342 8.90237 4.31658 8.90237 4.70711 9.29289L8 12.5858L15.2929 5.29289C15.6834 4.90237 16.3166 4.90237 16.7071 5.29289Z" fill="currentColor"/>
-        </svg>
-        <svg v-else class="status-icon status-error" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L11.4142 10L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L10 11.4142L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L8.58579 10L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L10 8.58579L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z" fill="currentColor"/>
-        </svg>
+        <img v-if="parsedResult.success" src="/assets/images/icon-check.png" class="status-icon" />
+        <img v-else src="/assets/images/icon-cross.png" class="status-icon" />
       </div>
     </div>
     <div class="mac-content" :style="{ height: 'fit-content' }">
@@ -115,8 +106,12 @@ watch(jsonString, async (json) => {
       <div v-else class="parsed-error">
         <div class="error-header">
           <svg class="error-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z" fill="currentColor"/>
-            <path d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L11.4142 10L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L10 11.4142L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L8.58579 10L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L10 8.58579L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z" fill="white"/>
+            <path
+              d="M10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18Z"
+              fill="currentColor" />
+            <path
+              d="M15.7071 4.29289C16.0976 4.68342 16.0976 5.31658 15.7071 5.70711L11.4142 10L15.7071 14.2929C16.0976 14.6834 16.0976 15.3166 15.7071 15.7071C15.3166 16.0976 14.6834 16.0976 14.2929 15.7071L10 11.4142L5.70711 15.7071C5.31658 16.0976 4.68342 16.0976 4.29289 15.7071C3.90237 15.3166 3.90237 14.6834 4.29289 14.2929L8.58579 10L4.29289 5.70711C3.90237 5.31658 3.90237 4.68342 4.29289 4.29289C4.68342 3.90237 5.31658 3.90237 5.70711 4.29289L10 8.58579L14.2929 4.29289C14.6834 3.90237 15.3166 3.90237 15.7071 4.29289Z"
+              fill="white" />
           </svg>
           <span class="error-title">Validation Error</span>
         </div>
@@ -195,24 +190,17 @@ watch(jsonString, async (json) => {
 
 .status-indicator {
   margin-left: auto;
-  margin-right: 8px;
+  margin-right: 4px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 3px;
 }
 
 .status-icon {
   width: 16px;
   height: 16px;
   flex-shrink: 0;
-}
-
-.status-success {
-  color: #27ca40;
-}
-
-.status-error {
-  color: #ff5f56;
 }
 
 .mac-content {
