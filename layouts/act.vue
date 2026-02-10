@@ -17,12 +17,10 @@ defineProps({
   <div class="act-slide">
     <CloudBackground />
     <div class="content">
-      <!-- Numéro d'acte -->
       <div class="act-label">
         {{ customLabel || `Acte ${actNumber}` }}
       </div>
       
-      <!-- Titre de l'acte -->
       <div class="act-title">
         <slot />
       </div>

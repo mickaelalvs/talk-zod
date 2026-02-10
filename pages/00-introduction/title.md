@@ -24,20 +24,15 @@ class: p-0 m-0
   </div>
 </div>
 
-<!-- Partie basse -->
-<div class="absolute bottom-8 left-125 transform -translate-x-1/2 z-10 flex items-center justify-center gap-20" style="width: 90%;">
-  <!-- Sous-titre à gauche -->
-  <div class="text-[#F6E3D3] font-noticia font-bold text-center" style="text-shadow: 1px 1px 0 #251007, 2px 2px 0 #251007, 3px 3px 0 #251007, 4px 4px 0 #251007;">
+<div class="absolute bottom-8 left-125 transform -translate-x-1/2 z-10 flex items-center justify-center gap-20" style="width: 90%;">  <div class="text-[#F6E3D3] font-noticia font-bold text-center" style="text-shadow: 1px 1px 0 #251007, 2px 2px 0 #251007, 3px 3px 0 #251007, 4px 4px 0 #251007;">
     <div class="text-lg opacity-80">Emmenez TypeScript</div>
     <div class="text-lg opacity-80">au-delà du build 🧙</div>
   </div>
 
-  <!-- Logo Zod au centre -->
   <div style="filter: drop-shadow(1px 1px 0 #251007) drop-shadow(2px 2px 0 #251007) drop-shadow(3px 3px 0 #251007);">
     <img src="./assets/zod.svg" class="h-12 opacity-80" />
   </div>
 
-  <!-- Presented by à droite -->
   <div class="text-[#F6E3D3] text-center font-noticia" style="text-shadow: 1px 1px 0 #251007, 2px 2px 0 #251007, 3px 3px 0 #251007, 4px 4px 0 #251007;">
     <div class="text-sm">Presented by</div>
     <div class="text-base opacity-80">Mickaël Alves & Lucas Audart</div>
