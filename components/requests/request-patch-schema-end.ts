@@ -1,4 +1,4 @@
-import z from "zod";
+import { z } from "zod";
 
 export const bookSchema = z.object({
   id: z.uuid(),
@@ -11,5 +11,5 @@ export const bookSchema = z.object({
 export const postBookSchema = bookSchema
 
 export const patchBookSchema = bookSchema.extend({
-  thumbnail: z.url().nullable() 
+  thumbnail: z.url().nullable()
 }).partial()
