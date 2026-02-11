@@ -7,7 +7,7 @@ transition: view-transition
 <div class="flex justify-center items-stretch gap-8">
 <div class="form-window-container">
 <MacWindow title="Formulaire" height="fit-content">
-    <PasswordForm />
+    <PasswordHtmlForm />
 </MacWindow>
 </div>
 </div>
@@ -56,8 +56,6 @@ transition: view-transition
 </style>
 
 <!--
-Essayer de voir si je peux faire le refine en code
-
 Ajouter le warning validation après celle du schéma
 -->
 

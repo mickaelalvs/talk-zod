@@ -1,12 +1,14 @@
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { ref, reactive, watch, onMounted } from 'vue'
 import { z } from 'zod'
 import { passwordFormSchema } from './password-schema'
 import type { PasswordFormData } from './password-schema.types'
 
+const STORAGE_KEY = 'passwordFormData'
+
 // Sample data - update this object to change the prefilled values
 const sampleData: PasswordFormData = {
-  login: 'user@example.com',
+  login: 'user@touraineTech.com',
   password: 'SecurePassword123',
   passwordConfirmation: 'SecurePassword123',
 }
@@ -20,6 +22,32 @@ const formData = reactive<PasswordFormData>({
 const errors = reactive<Partial<Record<keyof PasswordFormData, string>>>({})
 const isSubmitting = ref(false)
 const showConfetti = ref(false)
+const showPassword = ref(false)
+const showPasswordConfirmation = ref(false)
+
+// Load form data from sessionStorage on mount
+onMounted(() => {
+  const savedData = sessionStorage.getItem(STORAGE_KEY)
+  if (savedData) {
+    try {
+      const parsed = JSON.parse(savedData) as PasswordFormData
+      formData.login = parsed.login || ''
+      formData.password = parsed.password || ''
+      formData.passwordConfirmation = parsed.passwordConfirmation || ''
+    } catch (error) {
+      console.error('Failed to load form data from sessionStorage:', error)
+    }
+  }
+})
+
+// Save form data to sessionStorage whenever it changes
+watch(formData, (newData) => {
+  try {
+    sessionStorage.setItem(STORAGE_KEY, JSON.stringify(newData))
+  } catch (error) {
+    console.error('Failed to save form data to sessionStorage:', error)
+  }
+}, { deep: true })
 
 const triggerConfetti = () => {
   showConfetti.value = true
@@ -81,6 +109,9 @@ const handleSubmit = (e: Event) => {
     console.log('Form submitted:', formData)
     isSubmitting.value = false
     triggerConfetti()
+    
+    // Clear sessionStorage after successful submission
+    sessionStorage.removeItem(STORAGE_KEY)
   }, 200)
 }
 </script>
@@ -104,22 +135,37 @@ const handleSubmit = (e: Event) => {
       </div>
       <div class="form-group">
         <label for="login">Login</label>
-        <input id="login" v-model="formData.login" type="email" required @blur="validateField('login')"
+        <input id="login" v-model="formData.login" @blur="validateField('login')"
           :class="{ error: errors.login }" />
         <span v-if="errors.login" class="error-message">{{ errors.login }}</span>
       </div>
 
       <div class="form-group">
         <label for="password">Password</label>
-        <input id="password" v-model="formData.password" type="password" required minlength="12"
-          @blur="validateField('password')" :class="{ error: errors.password }" />
+        <div class="input-with-toggle">
+          <input id="password" v-model="formData.password" :type="showPassword ? 'text' : 'password'"
+            @blur="validateField('password')" :class="{ error: errors.password }" />
+          <button type="button" @click="showPassword = !showPassword" class="toggle-password-button"
+            :title="showPassword ? 'Hide password' : 'Show password'">
+            <img :src="showPassword ? '/components/forms/assets/hide.png' : '/components/forms/assets/show.png'"
+              :alt="showPassword ? 'Hide' : 'Show'" class="toggle-icon" />
+          </button>
+        </div>
         <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
       </div>
 
       <div class="form-group">
         <label for="passwordConfirmation">Confirm Password</label>
-        <input id="passwordConfirmation" v-model="formData.passwordConfirmation" type="password" required minlength="12"
-          @blur="validateForm" :class="{ error: errors.passwordConfirmation }" />
+        <div class="input-with-toggle">
+          <input id="passwordConfirmation" v-model="formData.passwordConfirmation"
+            :type="showPasswordConfirmation ? 'text' : 'password'" @blur="validateForm"
+            :class="{ error: errors.passwordConfirmation }" />
+          <button type="button" @click="showPasswordConfirmation = !showPasswordConfirmation" class="toggle-password-button"
+            :title="showPasswordConfirmation ? 'Hide password' : 'Show password'">
+            <img :src="showPasswordConfirmation ? '/components/forms/assets/hide.png' : '/components/forms/assets/show.png'"
+              :alt="showPasswordConfirmation ? 'Hide' : 'Show'" class="toggle-icon" />
+          </button>
+        </div>
         <span v-if="errors.passwordConfirmation" class="error-message">
           {{ errors.passwordConfirmation }}
         </span>
@@ -226,6 +272,56 @@ label {
   font-weight: 500;
   font-size: 0.875rem;
   color: #333;
+}
+
+.input-with-toggle {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-with-toggle input {
+  flex: 1;
+  padding-right: 2.5rem;
+}
+
+.toggle-password-button {
+  position: absolute;
+  right: 0.25rem;
+  background: transparent !important;
+  color: #666 !important;
+  border: none !important;
+  padding: 0.25rem 0.5rem !important;
+  font-size: 1rem;
+  cursor: pointer;
+  z-index: 3;
+  margin: 0 !important;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.toggle-password-button:active .toggle-icon {
+  animation: toggle-click 0.3s ease;
+}
+
+@keyframes toggle-click {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.toggle-icon {
+  width: 1rem;
+  height: 1rem;
+  display: block;
 }
 
 input {
