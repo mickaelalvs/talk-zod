@@ -1,7 +1,8 @@
 ---
+punctuation: ...
 ---
 
-# Et aussi...
+# Et aussi
 
 <div class="grid grid-cols-2 gap-4 mt-15">
 

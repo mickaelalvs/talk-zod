@@ -102,9 +102,11 @@ const body: PostRequestBody = {...}
 
 </MacWindow>
 
-<div v-if="$clicks >= 4" class="text-center text-3xl font-bold pt-10">
-  <h2>Le schéma devient la <span v-mark="{ at: 4, type: 'highlight', color: '#3168B7' }" class="text-white">source de vérité</span></h2>
-  <p class="text-lg">Zod nous protège au <span v-mark="{ at: 4, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">Runtime</span> ET au <span v-mark="{ at: 4, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">BuildTime</span></p>
+<div v-click="3">
+  <div v-if="$clicks >= 3" class="text-center text-3xl font-bold pt-10">
+    <h2>Le schéma devient la <span v-mark="{ at: 3, type: 'highlight', color: '#3168B7' }" class="text-white">source de vérité</span></h2>
+    <p class="text-lg">Zod nous protège au <span v-mark="{ at: 3, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">Runtime</span> ET au <span v-mark="{ at: 3, type: 'underline', color: '#3168B7' }" class="text-[#3168B7] font-semibold">BuildTime</span></p>
+  </div>
 </div>
 
 ---

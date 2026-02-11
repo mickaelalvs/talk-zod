@@ -12,7 +12,7 @@
 
 <MacWindow title="advanced.ts" height="240px">
 
-```ts {*|1|3|5|7-12}{lines:true,at:2}
+```ts {*|1|3|5|7-12}{lines:true,at:2} twoslash
 const user = { name: "Dorothy", age: 16 }  // type inféré !
 
 type UserDTO = Partial<Pick<typeof user, "name">>
