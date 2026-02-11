@@ -41,7 +41,7 @@ const validateField = (field: keyof PasswordFormData) => {
 
 const validateForm = () => {
   const result = passwordFormSchema.safeParse(formData)
-  
+
   if (!result.success) {
     result.error.issues.forEach((err) => {
       const field = err.path[0] as keyof PasswordFormData
@@ -49,7 +49,7 @@ const validateForm = () => {
     })
     return false
   }
-  
+
   // Clear all errors if validation passes
   Object.keys(errors).forEach((key) => delete errors[key as keyof PasswordFormData])
   return true
@@ -59,23 +59,23 @@ const fillFormWithSampleData = () => {
   formData.login = sampleData.login
   formData.password = sampleData.password
   formData.passwordConfirmation = sampleData.passwordConfirmation
-  
+
   // Clear any existing errors
   Object.keys(errors).forEach((key) => delete errors[key as keyof PasswordFormData])
-  
+
   // Validate the filled form
   validateForm()
 }
 
 const handleSubmit = (e: Event) => {
   e.preventDefault()
-  
+
   if (!validateForm()) {
     return
   }
-  
+
   isSubmitting.value = true
-  
+
   // Simulate form submission
   setTimeout(() => {
     console.log('Form submitted:', formData)
@@ -87,84 +87,55 @@ const handleSubmit = (e: Event) => {
 
 <template>
   <div class="form-container">
-    <form @submit="handleSubmit" class="password-form">
-      <button 
-        type="button" 
-        @click="fillFormWithSampleData" 
-        class="fill-button"
-        title="Fill with sample data"
-      >
-        ✨
-      </button>
-      <div v-if="showConfetti" class="confetti-container">
-        <div
-          v-for="i in 200"
-          :key="i"
-          class="confetti"
-          :style="{
-            left: Math.random() * 100 + '%',
-            animationDelay: Math.random() * 2 + 's',
-            '--drift': (Math.random() * 200 - 100) + 'px',
-            '--duration': (1.2 + Math.random() * 0.6) + 's',
-            width: Math.random() < 0.5 ? (6 + Math.random() * 4) + 'px' : (6 + Math.random() * 6) + 'px',
-            height: Math.random() < 0.5 ? (6 + Math.random() * 4) + 'px' : (5 + Math.random() * 6) + 'px',
-            backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8', '#6f42c1'][Math.floor(Math.random() * 6)]
-          }"
-        ></div>
-      </div>
-    <div class="form-group">
-      <label for="login">Login</label>
-      <input
-        id="login"
-        v-model="formData.login"
-        type="email"
-        required
-        @blur="validateField('login')"
-        :class="{ error: errors.login }"
-      />
-      <span v-if="errors.login" class="error-message">{{ errors.login }}</span>
-    </div>
-
-    <div class="form-group">
-      <label for="password">Password</label>
-      <input
-        id="password"
-        v-model="formData.password"
-        type="password"
-        required
-        minlength="12"
-        @blur="validateField('password')"
-        :class="{ error: errors.password }"
-      />
-      <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
-    </div>
-
-    <div class="form-group">
-      <label for="passwordConfirmation">Confirm Password</label>
-      <input
-        id="passwordConfirmation"
-        v-model="formData.passwordConfirmation"
-        type="password"
-        required
-        minlength="12"
-        @blur="validateForm"
-        :class="{ error: errors.passwordConfirmation }"
-      />
-      <span v-if="errors.passwordConfirmation" class="error-message">
-        {{ errors.passwordConfirmation }}
-      </span>
-    </div>
-
-    <button type="submit" :disabled="isSubmitting">
-      {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+    <button type="button" @click="fillFormWithSampleData" class="fill-button" title="Fill with sample data">
+      Autofill
     </button>
-  </form>
+    <form @submit="handleSubmit" class="password-form">
+      <div v-if="showConfetti" class="confetti-container">
+        <div v-for="i in 200" :key="i" class="confetti" :style="{
+          left: Math.random() * 100 + '%',
+          animationDelay: Math.random() * 2 + 's',
+          '--drift': (Math.random() * 200 - 100) + 'px',
+          '--duration': (1.2 + Math.random() * 0.6) + 's',
+          width: Math.random() < 0.5 ? (6 + Math.random() * 4) + 'px' : (6 + Math.random() * 6) + 'px',
+          height: Math.random() < 0.5 ? (6 + Math.random() * 4) + 'px' : (5 + Math.random() * 6) + 'px',
+          backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545', '#17a2b8', '#6f42c1'][Math.floor(Math.random() * 6)]
+        }"></div>
+      </div>
+      <div class="form-group">
+        <label for="login">Login</label>
+        <input id="login" v-model="formData.login" type="email" required @blur="validateField('login')"
+          :class="{ error: errors.login }" />
+        <span v-if="errors.login" class="error-message">{{ errors.login }}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input id="password" v-model="formData.password" type="password" required minlength="12"
+          @blur="validateField('password')" :class="{ error: errors.password }" />
+        <span v-if="errors.password" class="error-message">{{ errors.password }}</span>
+      </div>
+
+      <div class="form-group">
+        <label for="passwordConfirmation">Confirm Password</label>
+        <input id="passwordConfirmation" v-model="formData.passwordConfirmation" type="password" required minlength="12"
+          @blur="validateForm" :class="{ error: errors.passwordConfirmation }" />
+        <span v-if="errors.passwordConfirmation" class="error-message">
+          {{ errors.passwordConfirmation }}
+        </span>
+      </div>
+
+      <button type="submit" :disabled="isSubmitting">
+        {{ isSubmitting ? 'Submitting...' : 'Submit' }}
+      </button>
+    </form>
   </div>
 </template>
 
 <style scoped>
 .form-container {
   position: relative;
+  overflow: visible;
 }
 
 .confetti-container {
@@ -191,10 +162,12 @@ const handleSubmit = (e: Event) => {
     transform: translateX(0) rotate(0deg);
     opacity: 1;
   }
+
   50% {
     top: 50%;
     transform: translateX(var(--drift)) rotate(360deg);
   }
+
   100% {
     top: 100%;
     transform: translateX(calc(var(--drift) * 1.5)) rotate(720deg);
@@ -217,28 +190,28 @@ const handleSubmit = (e: Event) => {
 
 .fill-button {
   position: absolute;
-  top: 0rem;
-  right: 0.75rem;
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  opacity: 0.5;
-  color: white;
-  border: none;
-  font-size: 1.2rem;
+  top: -2rem;
+  right: 0.5rem;
+  background: #e8e8e8 !important;
+  color: #888 !important;
+  border: 1px solid #ccc !important;
+  border-radius: 3px;
+  font-size: 0.55rem;
   cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   z-index: 10;
-  transition: background-color 0.2s, transform 0.2s;
-  padding: 0;
-  line-height: 1;
+  padding: 0.1rem 0.35rem;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
-.fill-button:hover {
-  background-color: #5a6268;
-  transform: scale(1.1);
+.fill-button:hover,
+.fill-button:focus,
+.fill-button:active {
+  background-color: #ddd !important;
+  border-color: #aaa !important;
+  color: #666 !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .form-group {
@@ -319,4 +292,3 @@ button:disabled {
   background: #555;
 }
 </style>
-

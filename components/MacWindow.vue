@@ -20,6 +20,7 @@ const props = withDefaults(defineProps<Props>(), {
       <span class="mac-btn mac-maximize"></span>
       <span class="mac-title">{{ props.title }}</span>
       <span v-if="props.label" class="mac-label">{{ props.label }}</span>
+      <slot name="titlebar-actions" />
     </div>
     <div class="mac-content" :style="{ height: props.height }">
       <slot />
