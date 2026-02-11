@@ -114,7 +114,7 @@
 
 ---
 
-# L'écosystème Zod
+# L'écosystème, toujours lui
 
 <div class="flex gap-22 pt-15">
   <div 
