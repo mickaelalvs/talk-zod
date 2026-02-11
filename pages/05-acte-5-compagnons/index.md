@@ -47,6 +47,7 @@ transition: fade-out
   font-family: 'Noticia Text', serif;
   font-size: 1.5rem;
   text-align: center;
+  text-wrap: balance;
   max-width: 85%;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.7);
   z-index: 20;

@@ -57,7 +57,7 @@ transition: fade-out
   <v-switch>
     <template #1>
       <div class="sub-external">
-        Et tant qu'on reste dans ce monde-là… <strong>tout va bien.</strong>
+        Et tant que nous restons dans ce monde-là… <strong>tout va bien.</strong>
       </div>
     </template>
     <template #2>

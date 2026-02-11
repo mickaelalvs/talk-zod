@@ -48,6 +48,7 @@ transition: fade-out
   font-family: 'Noticia Text', serif;
   font-size: 1.5rem;
   text-align: center;
+  text-wrap: balance;
   max-width: 85%;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.7);
   z-index: 20;
@@ -71,12 +72,12 @@ transition: fade-out
     </template>
     <template #2>
       <div class="subtitle-box">
-        On réalise qu'on a besoin d'aide.
+        Nous réalisons que nous avons besoin d'aide.
       </div>
     </template>
     <template #3>
       <div class="subtitle-box">
-        On leur parle d'une <strong>route de briques jaunes</strong>...
+        On nous parle d'une <strong>route de briques jaunes</strong>...
       </div>
     </template>
     <template #4>
@@ -86,7 +87,7 @@ transition: fade-out
     </template>
     <template #5>
       <div class="subtitle-box">
-        Mais avant, ils croiseront des <strong>imposteurs</strong>.
+        Mais avant, nous croiserons des <strong>imposteurs</strong>.
       </div>
     </template>
     <template #6>

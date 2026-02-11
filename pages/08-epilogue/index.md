@@ -37,7 +37,7 @@ transition: fade-out
   }
 }
 
-.subtitle-box-1 {
+.subtitle-box {
   position: absolute;
   bottom: 3rem;
   left: 50%;
@@ -46,12 +46,13 @@ transition: fade-out
   font-family: 'Noticia Text', serif;
   font-size: 1.5rem;
   text-align: center;
+  text-wrap: balance;
   max-width: 85%;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.9), 0 0 10px rgba(0,0,0,0.7);
   z-index: 20;
 }
 
-.subtitle-box-1 strong {
+.subtitle-box strong {
   color: var(--oz-gold);
 }
 </style>
@@ -62,7 +63,7 @@ transition: fade-out
   <v-switch>
     <template #1>
       <div class="subtitle-box">
-        Au final, on réalise quelque chose d'important…
+        Au final, nous réalisons quelque chose d'important…
       </div>
     </template>
     <template #2>
