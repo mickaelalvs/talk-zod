@@ -148,7 +148,7 @@ src: ../../queryParams.md
       optional() / nullable()
     </div>
     <div class="text-sm text-gray-700">
-      Optionalité pour un champs
+      Optionalité pour un champ
     </div>
   </div>
   <div 

@@ -11,10 +11,10 @@
     :duration="500"
   >
     <div class="font-semibold text-base mb-1" style="color: var(--oz-zod-blue);">
-      discriminated unions
+      Discriminated unions
     </div>
     <div class="text-sm text-gray-700">
-      unions typées par discriminant
+      Unions typés par discriminant
     </div>
   </div>
     <div 
@@ -46,7 +46,7 @@
       Pipes
     </div>
     <div class="text-sm text-gray-700">
-      créer des chaines de schéma
+      Créer des chaines de schéma
     </div>
   </div>
   <div 
@@ -62,7 +62,7 @@
         looseObject / strictObject
     </div>
     <div class="text-sm text-gray-700">
-      gestion des clés inconnues
+      Gestion des clés inconnues
     </div>
   </div>
   <div 
@@ -78,7 +78,7 @@
       lazy
     </div>
     <div class="text-sm text-gray-700">
-      schémas récursifs
+      Schémas récursifs
     </div>
   </div>
     <div 
@@ -107,7 +107,7 @@
     :duration="500"
   >
     <div class="font-semibold text-7xl mb-1 p-6" style="color: var(--oz-zod-blue);">
-      Et bien d'autre !
+      Et bien d'autres !
     </div>
   </div>
 </div>
@@ -133,7 +133,7 @@
             zod-to-openapi
         </div>
         <div class="text-sm text-gray-600">
-            générer des specs OpenAPI
+            Générer des specs OpenAPI
         </div>
       </div>
       <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
@@ -141,7 +141,7 @@
             nestjs-graphql-zod
         </div>
         <div class="text-sm text-gray-600">
-            générer des requêtes GraphQL
+            Générer des requêtes GraphQL
         </div>
       </div>
     </div>
@@ -162,7 +162,7 @@
             openapi-zod-client
         </div>
         <div class="text-sm text-gray-600">
-            générer un client typé depuis OpenAPI
+            Générer un client typé depuis OpenAPI
         </div>
       </div>
       <div class="bg-white/50 backdrop-blur-sm rounded-xl p-4 shadow-md border border-gray-200/50">
@@ -170,7 +170,7 @@
             zod-prisma
         </div>
         <div class="text-sm text-gray-600">
-            générer des schémas depuis Prisma
+            Générer des schémas depuis Prisma
         </div>
       </div>
     </div>

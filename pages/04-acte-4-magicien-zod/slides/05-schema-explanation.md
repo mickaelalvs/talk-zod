@@ -1,4 +1,8 @@
-# Un schéma c'est quoi ?
+---
+punctuation: "?"
+---
+
+# Un schéma c'est quoi 
 
 <div class="grid grid-cols-2 gap-8 mt-15">
 

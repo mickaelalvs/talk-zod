@@ -77,7 +77,7 @@ transition: fade-out
     </template>
     <template #3>
       <div class="subtitle-box">
-        Derrière ces portes, un magicien les attend.
+        Derrière ces portes, un magicien nous attend.
       </div>
     </template>
     <template #4>
