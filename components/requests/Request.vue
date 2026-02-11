@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, onMounted, watch } from 'vue'
-import { requestSchema } from './request-schema'
+import { postBookSchema } from './request-schema'
 import MacWindow from '../MacWindow.vue'
+import { patchBookSchema } from './request-patch-schema';
 
 interface Props {
   method?: 'POST' | 'PATCH'
@@ -130,7 +131,7 @@ const makeRequest = () => {
       }
       
       // Parse using Zod schema
-      const result = requestSchema.parse(bodyData)
+      const result = props.method === 'POST' ? postBookSchema.parse(bodyData) : patchBookSchema.parse(bodyData)
       parsedData.value = result
       error.value = null
       errorDetails.value = []
