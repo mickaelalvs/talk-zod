@@ -26,7 +26,7 @@ transition: fade-out
   height: 60vh;
   width: 100%;
   object-fit: contain;
-  animation: pathMove5 15s linear forwards;
+  animation: pathMove5 25s linear forwards;
 }
 
 @keyframes pathMove5 {
