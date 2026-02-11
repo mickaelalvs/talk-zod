@@ -3,7 +3,7 @@
 </div>
 
 <div class="mt-10 text-center text-xl text-[#2D3748] italic font-bold">
-  Validation de <span v-mark="{ at: 4, color: '#3168B7', type: 'circle' }">schémas</span> TypeScript-first avec inférence de types statiques
+  Validation par <span v-mark="{ at: 4, color: '#3168B7', type: 'circle' }">schémas</span>, TypeScript-first, avec inférence de types statiques
 </div>
 
 <div class="flex justify-center gap-8 mt-12">

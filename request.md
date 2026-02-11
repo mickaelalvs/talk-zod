@@ -87,7 +87,7 @@ transition: fade
 // @noErrors
 import { z } from 'zod'
 // ---cut---
-export const PostRequestBodySchema = z.object({
+export const postBookSchema = z.object({
   id: z.string().uuid(),
   title: z.string().min(4).max(100),
   pageCount: z.number().min(1),
@@ -95,7 +95,7 @@ export const PostRequestBodySchema = z.object({
   hasBeenRead: z.boolean(),
 })
 
-type PostRequestBody = z.infer<typeof PostRequestBodySchema>
+type PostRequestBody = z.infer<typeof postBookSchema>
 
 const body: PostRequestBody = {...}
 ```
