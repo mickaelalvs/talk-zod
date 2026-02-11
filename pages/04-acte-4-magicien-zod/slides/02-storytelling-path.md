@@ -83,7 +83,7 @@ transition: fade-out
     </template>
     <template #4>
       <div class="subtitle-box">
-        On dit qu'il peut <strong>unifier deux mondes</strong> : celui du build et celui du runtime.
+        On dit qu'il peut <strong>unifier deux mondes,</strong> celui du build et celui du runtime.
       </div>
     </template>
     <template #5>
