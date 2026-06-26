@@ -78,7 +78,7 @@ transition: fade-out
     </template>
     <template #4>
       <div class="subtitle-box">
-        <strong>Zod</strong> et les autres ne sont pas des remplacements.
+        <strong>Zod</strong> et les autres ne sont pas des remplaçants.
       </div>
     </template>
     <template #5>

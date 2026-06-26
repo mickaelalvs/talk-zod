@@ -28,6 +28,8 @@ seoMeta:
   twitterImage: "/assets/images/og.jpeg"
   twitterUrl: "https://mickaelalvs.dev"
 src: ./pages/00-introduction/title.md
+addons:
+  - slidev-addon-narrator
 ---
 
 ---
