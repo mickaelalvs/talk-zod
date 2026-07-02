@@ -8,7 +8,7 @@ const STORAGE_KEY = 'passwordFormData'
 
 // Sample data - update this object to change the prefilled values
 const sampleData: PasswordFormData = {
-  login: 'user@touraineTech.com',
+  login: 'user@sunnytech.com',
   password: 'SecurePassword123',
   passwordConfirmation: 'SecurePassword123',
 }
