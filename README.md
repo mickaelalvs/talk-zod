@@ -1,6 +1,6 @@
 # Welcome to [Slidev](https://github.com/slidevjs/slidev)!
 
-To start the slide show:
+To start the slide show :
 
 - `pnpm install`
 - `pnpm dev`

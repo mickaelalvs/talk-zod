@@ -59,7 +59,7 @@ punctuation: "?"
 
 <MacWindow title="schema.parse()" height="auto">
 
-```ts twoslash
+```ts {*}{lines:true} twoslash
 import { z } from 'zod';
 
 const UserSchema = z.object({
@@ -88,7 +88,7 @@ try {
 
 <MacWindow title="schema.safeParse()" height="auto">
 
-```ts twoslash
+```ts {*}{lines:true} twoslash
 import { z } from 'zod';
 
 const UserSchema = z.object({
